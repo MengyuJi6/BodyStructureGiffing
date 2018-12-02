@@ -24,10 +24,14 @@
         </form>
     </nav>
     <div class="row">
-        <img id="body_hand_foot_image" class="body-img" src="photos/body_hand_foot_highlights_75p.jpg" usemap="#joint_map_name" alt="Skeleton joint image">
+        <img id="body_img" class="body-img" src="photos/humanbody.png" usemap="#bodymap" alt="body image">
+        <map name="bodymap">
+            <area shape="circle" id="head" data-key="head" href="#" coords="360,70,50" onclick="showFloatWindow(head)"/>
+            <area shape="circle" data-key="heart" href="#" coords="360,180,50"/>
+            <area shape="circle" data-key="abdomen" href="#" coords="360,300,50"/>
+        </map>
     </div>
 </div>
 
 </body>
-
 </html>
