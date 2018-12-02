@@ -1,6 +1,25 @@
+/*general css*/
+.margin-0-auto{
+    margin: 0 auto;
+}
+
+/*login css*/
 .login-panel{
     margin-top: 100px;
     border: solid #cbcbd2;
     border-radius: 10px;
     padding: 20px;
 }
+
+/*index css*/
+.body-img{
+    width: 675px;
+    height: 788px;
+    opacity: 100;
+    position: absolute;
+    left: 360px;
+    top: 60px;
+    padding: 0;
+    border: 0;
+}
+/*history css*/
