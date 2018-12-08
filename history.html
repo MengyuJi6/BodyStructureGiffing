@@ -1,26 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title> GiffingBody </title>
+    <meta charset="UTF-8">
+    <title>GiffingBody/History</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/store.everything.min.js"></script>
     <script type="text/javascript" src="js/jquery.imagemapster.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
-    <script type="text/javascript" src="js/md5.min.js"></script>
-    <script type="text/javascript" src="js/md5.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/history.js"></script>
 </head>
 <body>
 <div class="container">
     <nav class="navbar navbar-light bg-light justify-content-between">
         <a class="navbar-brand">GiffingBody</a>
-        <button class="btn btn-outline-success" type="button"><a href="history.html">View History</a></button>
+        <button class="btn btn-outline-success" type="button"><a href="index.html">Go Back</a></button>
         <form class="form-inline">
             <label>Hi, </label>
             <a href="#">admin</a>
@@ -28,17 +27,15 @@
         </form>
     </nav>
     <div class="row">
-        <img id="body_img" class="body-img" src="photos/humanbody.png" usemap="#bodymap" alt="body image">
-        <map name="bodymap">
-            <area shape="circle" id="head" data-key="head" href="#" coords="360,70,50" onclick="showHead();"/>
-
-            <area shape="circle" data-key="heart" href="#" coords="360,180,50" onclick="showHeart();" />
-
-            <area shape="circle" data-key="abdomen" href="#" coords="360,300,50" onclick="showAbdomen();"/>
-        </map>
+        <h4 class="margin-0-auto">Body Condition History</h4>
+    </div>
+    <div id="historytbl" class="row">
+        <!--history table-->
     </div>
 
+    <button id="updatebtn">update</button>
+    <button id="deletebtn">delete</button>
+    <button id="savebtn">save</button>
 </div>
-
 </body>
 </html>

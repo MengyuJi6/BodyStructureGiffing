@@ -2,9 +2,6 @@
 .margin-0-auto{
     margin: 0 auto;
 }
-.padding-2{
-    padding: 2px !important;
-}
 
 /*login css*/
 .login-panel{
@@ -20,9 +17,33 @@
     height: 788px;
     opacity: 100;
     position: absolute;
-    left: 0;
+    left: 320px;
     top: 60px;
     padding: 0;
     border: 0;
 }
+
 /*history css*/
+
+td {
+    border: 1px solid black;
+}
+
+th {
+    border: 1px solid black;
+}
+
+.historytable{
+    border: 1px solid black;
+}
+
+.unhighlighted{
+    border: 1px solid black;    
+    background: white;
+}
+
+.highlighted {
+    
+    border: 1px solid black;
+    background: yellow;
+}
