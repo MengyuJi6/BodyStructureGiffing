@@ -3,7 +3,7 @@ store.set('user',
   password:'123456',
   history: [
       {
-          date: '2018-12-5',
+          date: '2018-12-05',
           area: 'head',
           symptom: 'trauma',
           description: ''
@@ -12,13 +12,13 @@ store.set('user',
 });
 var hist = store.get('user');
 hist.history.push({
-    date: '2018-12-6',
+    date: '2018-12-06',
     area: 'abdomen',
     symptom: 'gas',
     description: 'whatever'
 });
 hist.history.push({
-    date: '2018-12-7',
+    date: '2018-12-07',
     area: 'heart',
     symptom: 'murmurs',
     description: 'whichever'
@@ -28,7 +28,7 @@ hist.history.splice( 1, 1);
 console.log(hist.history); */
 
 store.set('user', hist);
-console.log(store.get('user').history[1]);
+//console.log(store.get('user').history[1]);
 
 $(function () {
     $("#updatebtn").click(function () {        
@@ -47,10 +47,32 @@ $(function () {
 
     $("#deletebtn").click(function () {        
         var index = $('#historytbl').find(".highlighted").index(); //for history record 
-        $('#historytbl').find('.highlighted').remove();
-        var hist = store.get('user');
-        hist.history.splice( index-1, 1);
+        if (index != -1) {
+            $('#historytbl').find('.highlighted').remove();
+            //console.log(index);
+            var hist = store.get('user');
+            hist.history.splice( index-1, 1);
+            store.set('user', hist);
+        }
+    });
+
+    $("#savebtn").click(function () {
+        var symp = $('#symptom option:selected').val();
+        var d = new Date();
+        var month = d.getMonth()+1;
+        var day = d.getDate();
+        var dt = d.getFullYear() + '-' +
+            (month<10 ? '0' : '') + month + '-' +
+            (day<10 ? '0' : '') + day;
+        var desp = $('textarea#desctext').val();
+        var hist = store.get('user');        
+        hist.history.push({ date : dt,
+            area : 'abdomen',
+            symptom : symp,
+            description : desp
+        });
         store.set('user', hist);
+        //console.log(hist);
     });
 
     $("#historytbl").on("click", "tr", function() {
@@ -61,6 +83,7 @@ $(function () {
             else $(this).removeClass("highlighted");
         }
         //for update popup menu
+        
     });
 
     $(document).ready(function() {
