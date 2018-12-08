@@ -2,6 +2,9 @@
 .margin-0-auto{
     margin: 0 auto;
 }
+.padding-2{
+    padding: 2px !important;
+}
 
 /*login css*/
 .login-panel{
@@ -17,7 +20,7 @@
     height: 788px;
     opacity: 100;
     position: absolute;
-    left: 320px;
+    left: 0;
     top: 60px;
     padding: 0;
     border: 0;

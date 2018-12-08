@@ -20,7 +20,6 @@
 <div class="container">
     <nav class="navbar navbar-light bg-light justify-content-between">
         <a class="navbar-brand">GiffingBody</a>
-        <button class="btn btn-outline-success" type="button"><a href="history.html">View History</a></button>
         <form class="form-inline">
             <label>Hi, </label>
             <a href="#">admin</a>
@@ -28,17 +27,55 @@
         </form>
     </nav>
     <div class="row">
-        <img id="body_img" class="body-img" src="photos/humanbody.png" usemap="#bodymap" alt="body image">
-        <map name="bodymap">
-            <area shape="circle" id="head" data-key="head" href="#" coords="360,70,50" onclick="showHead();"/>
+        <div class="col-md-3">
+            <p>
+              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseTable" aria-expanded="false" aria-controls="collapseExample">
+                View History
+              </button>
+            </p>
+            <div class="collapse" id="collapseTable">
+              <div class="card card-body padding-2">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Date</th>
+                      <th scope="col">Symptom</th>
+                      <th scope="col">Area</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>Mark</td>
+                      <td>Otto</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td>Jacob</td>
+                      <td>Thornton</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">3</th>
+                      <td>Larry</td>
+                      <td>the Bird</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img id="body_img" class="body-img" src="photos/humanbody.png" usemap="#bodymap" alt="body image">
+            <map name="bodymap">
+                <area shape="circle" id="head" data-key="head" href="#" coords="360,70,50" onclick="showHead();"/>
 
-            <area shape="circle" data-key="heart" href="#" coords="360,180,50" onclick="showHeart();" />
+                <area shape="circle" data-key="heart" href="#" coords="360,180,50" onclick="showHeart();" />
 
-            <area shape="circle" data-key="abdomen" href="#" coords="360,300,50" onclick="showAbdomen();"/>
-        </map>
+                <area shape="circle" data-key="abdomen" href="#" coords="360,300,50" onclick="showAbdomen();"/>
+            </map>
+        </div>
+        <div class="col-md-3"></div>
     </div>
-
 </div>
-
 </body>
 </html>
