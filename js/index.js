@@ -34,3 +34,7 @@ function clickShowDiv(obj){
     $(obj).next().css("top", position_y);
     $(obj).next().css("display", "block");
 }
+function clickHideDiv(obj){
+    $(obj).parent().parent().parent().parent().css("display", "none");
+    // $("#" + id.toString()).attr("display", "none");
+}
