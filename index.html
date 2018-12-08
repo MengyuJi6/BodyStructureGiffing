@@ -67,26 +67,38 @@
     </div>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-default btn-circle" data-toggle="modal" data-target="#exampleModal"></button>
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Abdomen</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          ...
+          <div class="column-left">
+            <div id="rectangle"></div>
+            <br>
+            <textarea rows="4"> Enter Description Here </textarea>
+          </div>
+          <div class="column-right">
+            <button type="button" class="btn btn-secondary">Normal</button>
+            <button type="button" class="btn btn-secondary">Loss of Appetite</button>
+            <button type="button" class="btn btn-secondary">Deyhydration</button>
+            <button type="button" class="btn btn-secondary">Gas</button>
+            <button type="button" class="btn btn-secondary">Tender Abdomen</button>
+            <button type="button" class="btn btn-primary">Save: Create New Record</button>
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
