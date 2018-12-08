@@ -27,7 +27,7 @@
 }
 /*popup css*/
 /* Modal Background */
-.btn-circle {
+#abdomenOpen {
     position: absolute;
     top: 57%;
     left: 56%;
@@ -41,6 +41,22 @@
     font-size: 12px;
     line-height: 1.42857;
 }
+
+#headOpen {
+    position: absolute;
+    top: 18%;
+    left: 55.75%;
+    width: 40px;
+    height: 40px;
+    background-color: Transparent;
+    border: 2px solid black;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
 .hover-window-style{
     font-size: 10px;
     text-align: left;
