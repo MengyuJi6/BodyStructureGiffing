@@ -57,6 +57,21 @@
     line-height: 1.42857;
 }
 
+#heartOpen {
+    position: absolute;
+    top: 38%;
+    left: 58%;
+    width: 40px;
+    height: 40px;
+    background-color: Transparent;
+    border: 2px solid black;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
 .hover-window-style{
     font-size: 10px;
     text-align: left;
