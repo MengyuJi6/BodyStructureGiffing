@@ -31,6 +31,69 @@ function searchAbdomen(){
 	});
 }
 
+
+function searchHead(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs/search';
+	var search_item_copy = document.getElementById("search_head").value;
+	var search_item = search_item_copy.toString();
+	// var id1 = '4kg8IIClzvLtC';
+
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		q:search_item,
+		limit:6
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head').empty();
+		$('#rectangle-head').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function searchHeart(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs/search';
+	var search_item_copy = document.getElementById("search_heart").value;
+	var search_item = search_item_copy.toString();
+	// var id1 = '4kg8IIClzvLtC';
+
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		q:search_item,
+		limit:6
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart').empty();
+		$('#rectangle-heart').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
 function getNormalAbdomen(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
