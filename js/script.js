@@ -20,6 +20,8 @@ function getNormalAbdomen(){
 		var rectangle = document.getElementById("rectangle-abdomen")
 		rectangle.innherHTML = htmlUrl;
 		console.log(document.getElementById("rectangle-abdomen").innherHTML);
+		
+		$('#rectangle-abdomen').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
