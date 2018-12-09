@@ -15,12 +15,9 @@ function getNormalAbdomen(){
 	.done(function(response){
 		imgUrl = response.data[0].images.original.url;
 		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
-		console.log(htmlUrl)
-		console.log(response.data[0]);
 		var rectangle = document.getElementById("rectangle-abdomen")
 		rectangle.innherHTML = htmlUrl;
-		console.log(document.getElementById("rectangle-abdomen").innherHTML);
-		
+		$('#rectangle-abdomen').empty();
 		$('#rectangle-abdomen').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
@@ -43,8 +40,13 @@ function getAbdomenHunger(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen').empty();
+		$('#rectangle-abdomen').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -66,8 +68,13 @@ function getAbdomenDehydration(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen').empty();
+		$('#rectangle-abdomen').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -89,8 +96,13 @@ function getAbdomenGas(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen').empty();
+		$('#rectangle-abdomen').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -112,8 +124,13 @@ function getAbdomenTender(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen').empty();
+		$('#rectangle-abdomen').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -135,8 +152,13 @@ function getHeadNormal(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head').empty();
+		$('#rectangle-head').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -158,8 +180,13 @@ function getHeadDizziness(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head').empty();
+		$('#rectangle-head').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -181,8 +208,13 @@ function getHeadHeadache(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head').empty();
+		$('#rectangle-head').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -204,8 +236,13 @@ function getHeadVision(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head').empty();
+		$('#rectangle-head').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -227,8 +264,13 @@ function getHeadVomiting(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head').empty();
+		$('#rectangle-head').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -250,8 +292,13 @@ function getHeartNormal(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart').empty();
+		$('#rectangle-heart').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -273,8 +320,13 @@ function getHeartPalpitations(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart').empty();
+		$('#rectangle-heart').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -296,8 +348,13 @@ function getHeartMurmurs(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart').empty();
+		$('#rectangle-heart').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -319,8 +376,13 @@ function getHeartChestPain(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart').empty();
+		$('#rectangle-heart').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -342,8 +404,13 @@ function getHeartTightness(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart').empty();
+		$('#rectangle-heart').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -429,7 +496,218 @@ function showAbdomen(){
 	});
 }
 
+function abdomenNormalTextShow() {
+	$('#abd-normal-text').show()
+}
+
+function abdomenNormalTextHide() {
+	$('#abd-normal-text').hide()
+}
+
+function abdomenHungerTextShow() {
+	$('#abd-appetite-text').show()
+}
+
+function abdomenHungerTextHide() {
+	$('#abd-appetite-text').hide()
+}
+function abdomenDehydrationTextShow() {
+	$('#abd-dehydration-text').show()
+}
+
+function abdomenDehydrationTextHide() {
+	$('#abd-dehydration-text').hide()
+}
+function abdomenGasTextShow() {
+	$('#abd-gas-text').show()
+}
+
+function abdomenGasTextHide() {
+	$('#abd-gas-text').hide()
+}
+function abdomenTenderTextShow() {
+	$('#abd-tender-text').show()
+}
+
+function abdomenTenderTextHide() {
+	$('#abd-tender-text').hide()
+}
+
+
+
+
+function headNormalTextShow() {
+	$('#head-normal-text').show()
+}
+
+function headNormalTextHide() {
+	$('#head-normal-text').hide()
+}
+function headDizzyTextShow() {
+	$('#head-dizzy-text').show()
+}
+
+function headDizzyTextHide() {
+	$('#head-dizzy-text').hide()
+}
+function headHeadacheTextShow() {
+	$('#head-headache-text').show()
+}
+
+function headHeadacheTextHide() {
+	$('#head-headache-text').hide()
+}
+function headVisionTextShow() {
+	$('#head-vision-text').show()
+}
+
+function headVisionTextHide() {
+	$('#head-vision-text').hide()
+}
+function headVomitTextShow() {
+	$('#head-vomit-text').show()
+}
+
+function headVomitTextHide() {
+	$('#head-vomit-text').hide()
+}
+
+
+
+function heartNormalTextShow() {
+	$('#heart-normal-text').show()
+}
+
+function heartNormalTextHide() {
+	$('#heart-normal-text').hide()
+}
+function heartPalpitationTextShow() {
+	$('#heart-palpitation-text').show()
+}
+
+function heartPalpitationTextHide() {
+	$('#heart-palpitation-text').hide()
+}
+function heartMurmurTextShow() {
+	$('#heart-murmur-text').show()
+}
+
+function heartMurmurTextHide() {
+	$('#heart-murmur-text').hide()
+}
+function heartChestTextShow() {
+	$('#heart-chest-text').show()
+}
+
+function heartChestTextHide() {
+	$('#heart-chest-text').hide()
+}
+function heartTightnessTextShow() {
+	$('#heart-tightness-text').show()
+}
+
+function heartTightnessTextHide() {
+	$('#heart-tightness-text').hide()
+}
+
+
 $(document).ready(function () {
+	$('#abdomen-normal').mouseenter(function() {
+		abdomenNormalTextShow();
+	});
+	$('#abdomen-normal').mouseleave(function() {
+		abdomenNormalTextHide();
+	});
+	$('#abdomen-hunger').mouseenter(function() {
+		abdomenHungerTextShow();
+	});
+	$('#abdomen-hunger').mouseleave(function() {
+		abdomenHungerTextHide();
+	});
+	$('#abdomen-dehydration').mouseenter(function() {
+		abdomenDehydrationTextShow();
+	});
+	$('#abdomen-dehydration').mouseleave(function() {
+		abdomenDehydrationTextHide();
+	});
+	$('#abdomen-gas').mouseenter(function() {
+		abdomenGasTextShow();
+	});
+	$('#abdomen-gas').mouseleave(function() {
+		abdomenGasTextHide();
+	});
+	$('#abdomen-tender').mouseenter(function() {
+		abdomenTenderTextShow();
+	});
+	$('#abdomen-tender').mouseleave(function() {
+		abdomenTenderTextHide();
+	});
+
+
+	$('#head-normal').mouseenter(function() {
+		headNormalTextShow();
+	});
+	$('#head-normal').mouseleave(function() {
+		headNormalTextHide();
+	});
+	$('#head-dizzy').mouseenter(function() {
+		headDizzyTextShow();
+	});
+	$('#head-dizzy').mouseleave(function() {
+		headDizzyTextHide();
+	});
+	$('#head-headache').mouseenter(function() {
+		headHeadacheTextShow();
+	});
+	$('#head-headache').mouseleave(function() {
+		headHeadacheTextHide();
+	});
+	$('#head-vision').mouseenter(function() {
+		headVisionTextShow();
+	});
+	$('#head-vision').mouseleave(function() {
+		headVisionTextHide();
+	});
+	$('#head-vomit').mouseenter(function() {
+		headVomitTextShow();
+	});
+	$('#head-vomit').mouseleave(function() {
+		headVomitTextHide();
+	});
+
+
+	$('#heart-normal').mouseenter(function() {
+		heartNormalTextShow();
+	});
+	$('#heart-normal').mouseleave(function() {
+		heartNormalTextHide();
+	});
+	$('#heart-palpitation').mouseenter(function() {
+		heartPalpitationTextShow();
+	});
+	$('#heart-palpitation').mouseleave(function() {
+		heartPalpitationTextHide();
+	});
+	$('#heart-murmur').mouseenter(function() {
+		heartMurmurTextShow();
+	});
+	$('#heart-murmur').mouseleave(function() {
+		heartMurmurTextHide();
+	});
+	$('#heart-chest').mouseenter(function() {
+		heartChestTextShow();
+	});
+	$('#heart-chest').mouseleave(function() {
+		heartChestTextHide();
+	});
+	$('#heart-tightness').mouseenter(function() {
+		heartTightnessTextShow();
+	});
+	$('#heart-tightness').mouseleave(function() {
+		heartTightnessTextHide();
+	});
+
+
 	$('#abdomen-normal').click(function() {
 		getNormalAbdomen();
 	});
