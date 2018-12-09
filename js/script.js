@@ -1,4 +1,5 @@
 var api_key = "kZN6VfSXRAkZCOVr0G99mH3q84rdRY7T"
+var clickedSymptom = 0;
 
 function searchAbdomen(){
 	var ts = new Date().getTime();
@@ -804,47 +805,241 @@ $(document).ready(function () {
 
 	$('#abdomen-normal').click(function() {
 		getNormalAbdomen();
+		clickedSymptom = "Normal";
 	});
 	$('#abdomen-hunger').click(function() {
 		getAbdomenHunger();
+		clickedSymptom = "Loss of Appetite";
 	});
 	$('#abdomen-dehydration').click(function() {
 		getAbdomenDehydration();
+		clickedSymptom = "Dehydration";
 	});
 	$('#abdomen-gas').click(function() {
 		getAbdomenGas();
+		clickedSymptom = "Gas";
 	});
 	$('#abdomen-tender').click(function() {
 		getAbdomenTender();
+		clickedSymptom = "Tender Abdomen";
 	});
 	$('#head-normal').click(function() {
 		getHeadNormal();
+		clickedSymptom = "Normal";
 	});
 	$('#head-dizzy').click(function() {
 		getHeadDizziness();
+		clickedSymptom = "Dizziness";
 	});
 	$('#head-headache').click(function() {
 		getHeadHeadache();
+		clickedSymptom = "Headache";
 	});
 	$('#head-vision').click(function() {
 		getHeadVision();
+		clickedSymptom = "Changes in Vision";
 	});
 	$('#head-vomit').click(function() {
 		getHeadVomiting();
+		clickedSymptom = "Vomiting";
 	});
 	$('#heart-normal').click(function() {
 		getHeartNormal();
+		clickedSymptom = "Normal";
 	});
 	$('#heart-palpitation').click(function() {
 		getHeartPalpitations();
+		clickedSymptom = "Heart Palpitations";
 	});
 	$('#heart-murmur').click(function() {
 		getHeartMurmurs();
+		clickedSymptom = "Murmurs";
 	});
 	$('#heart-chest').click(function() {
 		getHeartChestPain();
+		clickedSymptom = "Chest Pain";
 	});
 	$('#heart-tightness').click(function() {
 		getHeartTightness();
+		clickedSymptom = "Tightness or Pressure";
 	});
 });
+
+//history function
+$(function () {
+    $("#updatebtn").click(function () {        
+        var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+        var HistoryTable = makeTable($('#historytbl'), data);
+    });
+
+    $("#deletebtn").click(function () {        
+        var index = $('#historytbl').find(".highlighted").index(); //for history record 
+        if (index != -1) {
+            $('#historytbl').find('.highlighted').remove();
+            //console.log(index);
+            var hist = store.get('user');
+            hist.history.splice( index-1, 1);
+            store.set('user', hist);
+        }
+    });
+
+    $("#abdomenSaveBtn").click(function () {
+		if (clickedSymptom == 0) alert("Select a symptom");
+		else {
+        	var d = new Date();
+	        var month = d.getMonth()+1;
+        	var	day = d.getDate();
+        	var dt = d.getFullYear() + '-' +
+	            (month<10 ? '0' : '') + month + '-' +
+            	(day<10 ? '0' : '') + day;
+        	var desp = $('textarea#abdomenDesc').val();
+        	var hist = store.get('user');        
+        	hist.history.push({ date : dt,
+	            area : 'Abdomen',
+            	symptom : clickedSymptom,
+            	description : desp
+        	});
+			store.set('user', hist);
+
+		}
+        //console.log(hist);
+	});
+
+	$("#headSaveBtn").click(function () {
+		if (clickedSymptom == 0) alert("Select a symptom");
+		else {
+        	var d = new Date();
+	        var month = d.getMonth()+1;
+        	var	day = d.getDate();
+        	var dt = d.getFullYear() + '-' +
+	            (month<10 ? '0' : '') + month + '-' +
+            	(day<10 ? '0' : '') + day;
+        	var desp = $('textarea#headDesc').val();
+        	var hist = store.get('user');        
+        	hist.history.push({ date : dt,
+	            area : 'Head',
+            	symptom : clickedSymptom,
+            	description : desp
+        	});
+			store.set('user', hist);
+			
+		}
+        //console.log(hist);
+	});
+
+	$("#heartSaveBtn").click(function () {
+		if (clickedSymptom == 0) alert("Select a symptom");
+		else {
+        	var d = new Date();
+	        var month = d.getMonth()+1;
+        	var	day = d.getDate();
+        	var dt = d.getFullYear() + '-' +
+	            (month<10 ? '0' : '') + month + '-' +
+            	(day<10 ? '0' : '') + day;
+        	var desp = $('textarea#heartDesc').val();
+        	var hist = store.get('user');        
+        	hist.history.push({ date : dt,
+	            area : 'Heart',
+            	symptom : clickedSymptom,
+            	description : desp
+        	});
+			store.set('user', hist);
+			
+		}
+        //console.log(hist);
+	});
+	
+	$("#editbtn").click(function () {		
+		var index = $('#historytbl').find(".highlighted").index();
+		if (index != -1) {
+			clickShowDiv(this);
+			var hist = store.get('user');
+			$('#editDate').val(hist.history[index-1].date);
+			$('#editArea').val(hist.history[index-1].area);
+			$('#editSymptom').val(hist.history[index-1].symptom);
+			$('#editDesc').val(hist.history[index-1].description);
+			//console.log(hist);
+		}
+		else {
+			alert("select a record");
+		}
+	});
+	
+	$("#saveChangeBtn").click(function () {
+		var index = $('#historytbl').find(".highlighted").index();
+        var symp = $('#editSymptom').val();
+        var dat = $('#editDate').val();
+		var desp = $('#editDesc').val();
+		var aa = $('#editArea').val();
+		var hist = store.get('user');
+		hist.history.splice( index-1, 1, { date : dat,
+            area : aa,
+            symptom : symp,
+            description : desp
+        });
+		store.set('user', hist);
+		clickHideDiv(this);
+		var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+        var HistoryTable = makeTable($('#historytbl'), data);
+        //console.log(hist);
+	});
+
+    $("#historytbl").on("click", "tr", function() {
+        var selected = $(this).hasClass("highlighted");
+        if ($(this).index()!=0) {
+            $('#historytbl').find(".highlighted").removeClass('highlighted');
+            if(!selected) $(this).addClass("highlighted");
+            else $(this).removeClass("highlighted");
+        }
+        //for update popup menu
+        
+    });
+
+    $(document).ready(function() {
+        var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+        var HistoryTable = makeTable($('#historytbl'), data);
+    });
+});
+
+function makeTable(container, data) {
+    var table = $("<table/>").addClass('table');
+    $.each(data, function(rowIndex, r) {
+        var row = $("<tr/>");
+        $.each(r, function(colIndex, c) { 
+            if (rowIndex == 0) {
+                row.append($("<th/>").text(c));
+            } else {
+            row.append($("<td/>").text(c));
+            }
+        });
+        table.append(row);
+    });
+    return container.html(table);
+}
