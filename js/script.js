@@ -1,5 +1,36 @@
 var api_key = "kZN6VfSXRAkZCOVr0G99mH3q84rdRY7T"
 
+function searchAbdomen(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs/search';
+	var search_item_copy = document.getElementById("search_abdomen").value;
+	var search_item = search_item_copy.toString();
+	// var id1 = '4kg8IIClzvLtC';
+
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		q:search_item,
+		limit:6
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen').empty();
+		$('#rectangle-abdomen').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
 function getNormalAbdomen(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
