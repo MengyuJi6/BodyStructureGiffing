@@ -4,11 +4,12 @@ function getNormalAbdomen(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
 	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '4kg8IIClzvLtC';
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
 		hash:hash,
-		gif_id:"4kg8IIClzvLtC",
+		ids:id1,
 		limit:10
 	})
 	.done(function(data){
