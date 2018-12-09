@@ -12,8 +12,14 @@ function getNormalAbdomen(){
 		ids:id1,
 		limit:10
 	})
-	.done(function(data){
-		console.log(data);
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		console.log(htmlUrl)
+		console.log(response.data[0]);
+		var rectangle = document.getElementById("rectangle-abdomen")
+		rectangle.innherHTML = htmlUrl;
+		console.log(document.getElementById("rectangle-abdomen").innherHTML);
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -165,7 +171,7 @@ function getHeadHeadache(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
 	var url = 'https://api.giphy.com/v1/gifs';
-	var id1 = 'l378aiPPFAGEsetIkp';
+	var id1 = 'l378aiPPFAGEsetIk';
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -424,5 +430,47 @@ function showAbdomen(){
 $(document).ready(function () {
 	$('#abdomen-normal').click(function() {
 		getNormalAbdomen();
+	});
+	$('#abdomen-hunger').click(function() {
+		getAbdomenHunger();
+	});
+	$('#abdomen-dehydration').click(function() {
+		getAbdomenDehydration();
+	});
+	$('#abdomen-gas').click(function() {
+		getAbdomenGas();
+	});
+	$('#abdomen-tender').click(function() {
+		getAbdomenTender();
+	});
+	$('#head-normal').click(function() {
+		getHeadNormal();
+	});
+	$('#head-dizzy').click(function() {
+		getHeadDizziness();
+	});
+	$('#head-headache').click(function() {
+		getHeadHeadache();
+	});
+	$('#head-vision').click(function() {
+		getHeadVision();
+	});
+	$('#head-vomit').click(function() {
+		getHeadVomiting();
+	});
+	$('#heart-normal').click(function() {
+		getHeartNormal();
+	});
+	$('#heart-palpitation').click(function() {
+		getHeartPalpitations();
+	});
+	$('#heart-murmur').click(function() {
+		getHeartMurmurs();
+	});
+	$('#heart-chest').click(function() {
+		getHeartChestPain();
+	});
+	$('#heart-tightness').click(function() {
+		getHeartTightness();
 	});
 });
