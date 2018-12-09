@@ -1410,7 +1410,10 @@ $(function () {
             var hist = store.get('user');
             hist.history.splice( index-1, 1);
 			store.set('user', hist);
-			$('#historyMessage').text('Delete Successful');
+			$('#historyMessage').text('Delete Successful');			
+			$('#abdomenEditFloat').css("display", "none");
+			$('#heartEditFloat').css("display", "none");
+			$('#headEditFloat').css("display", "none");
         }
     });
 
@@ -1675,6 +1678,7 @@ $(function () {
 				$('#abdomenText').text('');
 				$('#headText').text('');
 				$('#heartText').text('');
+				$('#historyMessage').text('');
 				var hist = store.get('user');
 				var recordArea = hist.history[index-1].area;
 				var recordSymptom = hist.history[index-1].symptom;
