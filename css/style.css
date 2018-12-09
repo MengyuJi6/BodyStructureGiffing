@@ -2,6 +2,9 @@
 .margin-0-auto{
     margin: 0 auto;
 }
+.padding-2{
+    padding: 2px !important;
+}
 
 /*login css*/
 .login-panel{
@@ -17,10 +20,27 @@
     height: 788px;
     opacity: 100;
     position: absolute;
-    left: 320px;
+    left: 0;
     top: 60px;
     padding: 0;
     border: 0;
+    z-index: 1
+}
+
+.collapse{
+    position: relative;
+    float: left;
+    z-index: 100;
+}
+
+.btnDivider{
+    left: 100px;
+    top: 60px;
+}
+
+#deletebtn{    
+    top:0; 
+    right:0;
 }
 
 /*history css*/
@@ -35,11 +55,6 @@ th {
 
 .historytable{
     border: 1px solid black;
-}
-
-.unhighlighted{
-    border: 1px solid black;    
-    background: white;
 }
 
 .highlighted {

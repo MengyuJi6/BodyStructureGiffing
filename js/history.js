@@ -1,16 +1,5 @@
-store.set('user', 
-{ name:'Marcus',
-  password:'123456',
-  history: [
-      {
-          date: '2018-12-05',
-          area: 'head',
-          symptom: 'trauma',
-          description: ''
-      }
-  ]
-});
-var hist = store.get('user');
+
+/* var hist = store.get('user');
 hist.history.push({
     date: '2018-12-06',
     area: 'abdomen',
@@ -22,12 +11,12 @@ hist.history.push({
     area: 'heart',
     symptom: 'murmurs',
     description: 'whichever'
-});
+}); */
 /* console.log(hist.history);
 hist.history.splice( 1, 1);
 console.log(hist.history); */
 
-store.set('user', hist);
+//store.set('user', hist);
 //console.log(store.get('user').history[1]);
 
 $(function () {
