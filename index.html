@@ -40,14 +40,18 @@
               </button>
             </p>
             <div class="collapse" id="collapseTable">
-                <div class="btnDivider">
+                <div class="row">
+                <div class="col-sm-8">
+                    <div id="historyMessage"></div>
+                </div>
+                <div class="col-sm-2">
                   <button id="deletebtn" class="btn btn-primary" type="button">
                     delete
                   </button>
-                  <button id="updatebtn" class="btn btn-primary" type="button">
-                    update
-                  </button>
-                  <button id="editbtn" type="button" class="btn btn-default btn-circle">edit</button>
+                  <!-- <button id="updatebtn" class="btn btn-primary" type="button"> -->
+                    <!-- update -->
+                  <!-- </button> -->
+                  <!-- <button id="editbtn" type="button" class="btn btn-default btn-circle">edit</button> -->
       <div id="editFloat" class="hover-window-style2 container">
           <div class="row">
               <div class="col-md-4"></div>
@@ -75,6 +79,7 @@
           </div>
           </div>
       </div>
+                </div>
                 </div>
       
                 <br>
@@ -151,6 +156,49 @@
                     </span>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="abdomenEditFloat" class="hover-window-style container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h6>abdomen</h6>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0;editState=0;$('#abdomenText').text('');$('#historytbl').find('.highlighted').removeClass('highlighted')">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <div id="rectangle-abdomen2"></div>
+            <br>
+            <textarea disabled id="abdomenDesc2" rows="4" placeholder="Enter Description Here"></textarea>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <button type="button" id="abdomen-normal2" class="btn btn-secondary">Normal</button>
+                </div>
+                <div class="row">
+                    <button type="button" id="abdomen-hunger2" class="btn btn-secondary">Loss of Appetite</button>
+                </div>
+                <div class="row">
+                    <button type="button" id="abdomen-dehydration2" class="btn btn-secondary">Deyhydration</button>
+                </div>
+                <div class="row">
+                    <button type="button" id="abdomen-gas2" class="btn btn-secondary">Gas</button>
+                </div>
+                <div class="row">
+                    <button type="button" id="abdomen-tender2" class="btn btn-secondary">Tender Abdomen</button>
+                </div>
+            </div>
+        </div>
+        <div id='abdomenText' class='editText'></div>
+        <div class="row">            
+            <button id="abdomenEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
+            <button id="abdomenUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
         </div>
     </div>
 
@@ -254,6 +302,48 @@
             </div>
         </div>
     </div>
+    <div id="headEditFloat" class="hover-window-style container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h6>head</h6>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0;editState=0;$('#headText').text('');$('#historytbl').find('.highlighted').removeClass('highlighted')">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">                                         
+                <div class="col-md-6">
+                <div id="rectangle-head2"></div>
+                <br>
+                <textarea disabled id="headDesc2" rows="4" placeholder="Enter Description Here"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <button type="button" id="head-normal2" class="btn btn-secondary">Normal</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="head-dizzy2" class="btn btn-secondary">Dizziness</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="head-headache2" class="btn btn-secondary">Headache</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="head-vision2" class="btn btn-secondary">Changes in Vision</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="head-vomit2" class="btn btn-secondary">Vomiting</button>
+                    </div>
+                </div>
+            </div>
+            <div id='headText' class='editText'></div>
+            <div class="row">
+                <button id="headEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
+                <button id="headUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
+            </div>            
+        </div>
 
 
 <!-- Heart -->
@@ -267,7 +357,7 @@
             </div>
             <div class="col-md-4">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true" onclick="clickHideDiv(this)">&times;</span>
+                    <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0">&times;</span>
                 </button>
             </div>
         </div>
@@ -316,6 +406,48 @@
             </div>
         </div>
     </div>
+    <div id="heartEditFloat" class="hover-window-style container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h6>heart</h6>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0;editState=0;$('#heartText').text('');$('#historytbl').find('.highlighted').removeClass('highlighted')">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <div id="rectangle-heart2"></div>
+                <br>
+                <textarea disabled id="heartDesc2" rows="4" placeholder="Enter Description Here"></textarea>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <button type="button" id="heart-normal2" class="btn btn-secondary">Normal</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="heart-palpitation2" class="btn btn-secondary">Heart Palpitations</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="heart-murmur2" class="btn btn-secondary">Murmurs</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="heart-chest2" class="btn btn-secondary">Arrhythmia/Chest Pain</button>
+                    </div>
+                    <div class="row">
+                        <button type="button" id="heart-tightness2" class="btn btn-secondary">Tightness or Pressure</button>
+                    </div>
+                </div>
+            </div>
+            <div id='heartText' class='editText'></div>
+            <div class="row">
+                <button id="heartEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
+                <button id="heartUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
+            </div>
+        </div>
 
 
 </div>

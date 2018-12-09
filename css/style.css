@@ -38,6 +38,11 @@
     background: yellow;
 }
 
+.editText {    
+    font-size: 20px;
+    text-align: center;
+}
+
 /*popup css*/
 /* Modal Background */
 #abdomenOpen {

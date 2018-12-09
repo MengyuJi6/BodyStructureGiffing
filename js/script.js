@@ -1,5 +1,6 @@
 var api_key = "kZN6VfSXRAkZCOVr0G99mH3q84rdRY7T"
 var clickedSymptom = 0;
+var editState = 0;
 
 var temp = store.get('user');
 if (temp == undefined) {
@@ -524,6 +525,426 @@ function getHeartTightness(){
 	});
 }
 
+function getNormalAbdomen2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '4kg8IIClzvLtC';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen2').empty();
+		$('#rectangle-abdomen2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getAbdomenHunger2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'JE1YlMbVIPxUA';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen2').empty();
+		$('#rectangle-abdomen2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getAbdomenDehydration2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'zrwhJfPPkSXaU';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen2').empty();
+		$('#rectangle-abdomen2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getAbdomenGas2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'UAhY9fQziKNyM';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen2').empty();
+		$('#rectangle-abdomen2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getAbdomenTender2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '1372p1RSz94o6s';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen2').empty();
+		$('#rectangle-abdomen2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeadNormal2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '4kg8IIClzvLtC';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head2').empty();
+		$('#rectangle-head2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeadDizziness2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'xUNda89D3OJcYaMkeI';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head2').empty();
+		$('#rectangle-head2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeadHeadache2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'l378aiPPFAGEsetIk';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head2').empty();
+		$('#rectangle-head2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeadVision2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '3o6ozkchQhWRbWSTXa';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head2').empty();
+		$('#rectangle-head2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeadVomiting2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'dOl2LFw0RbTMc';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head2').empty();
+		$('#rectangle-head2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeartNormal2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '3o7ZeN4rMARhZxgXqo';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart2').empty();
+		$('#rectangle-heart2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeartPalpitations2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '2mN50UXV2bCZW';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart2').empty();
+		$('#rectangle-heart2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeartMurmurs2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'DZagytQ7EmIg';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart2').empty();
+		$('#rectangle-heart2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeartChestPain2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = '3o6MbgOI2otYruPIkg';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart2').empty();
+		$('#rectangle-heart2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function getHeartTightness2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs';
+	var id1 = 'nsZqyB2Qys0lG';
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		ids:id1,
+		limit:10
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart2').empty();
+		$('#rectangle-heart2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
 function showHeart(){
 	// $('#result').html("");
 	var ts = new Date().getTime();
@@ -872,6 +1293,97 @@ $(document).ready(function () {
 		getHeartTightness();
 		clickedSymptom = "Tightness or Pressure";
 	});
+
+	$('#abdomen-normal2').click(function() {
+		if (editState == 1) {getNormalAbdomen2();
+			$('#abdomenEditFloat').find(".active").removeClass('active');
+			$('#abdomen-normal2').addClass('active');
+		clickedSymptom = "Normal";}
+	});
+	$('#abdomen-hunger2').click(function() {
+		if (editState == 1) {getAbdomenHunger2();
+			$('#abdomenEditFloat').find(".active").removeClass('active');
+			$('#abdomen-hunger2').addClass('active');
+		clickedSymptom = "Loss of Appetite";}
+	});
+	$('#abdomen-dehydration2').click(function() {
+		if (editState == 1) {getAbdomenDehydration2();
+			$('#abdomenEditFloat').find(".active").removeClass('active');
+			$('#abdomen-dehydration2').addClass('active');
+		clickedSymptom = "Dehydration";}
+	});
+	$('#abdomen-gas2').click(function() {
+		if (editState == 1) {getAbdomenGas2();
+			$('#abdomenEditFloat').find(".active").removeClass('active');
+			$('#abdomen-gas2').addClass('active');
+		clickedSymptom = "Gas";}
+	});
+	$('#abdomen-tender2').click(function() {
+		if (editState == 1) {getAbdomenTender2();
+			$('#abdomenEditFloat').find(".active").removeClass('active');
+			$('#abdomen-tender2').addClass('active');
+		clickedSymptom = "Tender Abdomen";}
+	});
+	$('#head-normal2').click(function() {
+		if (editState == 1) {getHeadNormal2();
+			$('#headEditFloat').find(".active").removeClass('active');
+			$('#head-normal2').addClass('active');
+		clickedSymptom = "Normal";}
+	});
+	$('#head-dizzy2').click(function() {
+		if (editState == 1) {getHeadDizziness2();
+			$('#headEditFloat').find(".active").removeClass('active');
+			$('#head-dizzy2').addClass('active');
+		clickedSymptom = "Dizziness";}
+	});
+	$('#head-headache2').click(function() {
+		if (editState == 1) {getHeadHeadache2();
+			$('#headEditFloat').find(".active").removeClass('active');
+			$('#head-headache2').addClass('active');
+		clickedSymptom = "Headache";}
+	});
+	$('#head-vision2').click(function() {
+		if (editState == 1) {getHeadVision2();
+			$('#headEditFloat').find(".active").removeClass('active');
+			$('#head-vision2').addClass('active');
+		clickedSymptom = "Changes in Vision";}
+	});
+	$('#head-vomit2').click(function() {
+		if (editState == 1) {getHeadVomiting2();
+			$('#headEditFloat').find(".active").removeClass('active');
+			$('#head-vomit2').addClass('active');
+		clickedSymptom = "Vomiting";}
+	});
+	$('#heart-normal2').click(function() {
+		if (editState == 1) {getHeartNormal2();
+			$('#heartEditFloat').find(".active").removeClass('active');
+			$('#heart-normal2').addClass('active');
+		clickedSymptom = "Normal";}
+	});
+	$('#heart-palpitation2').click(function() {
+		if (editState == 1) {getHeartPalpitations2();
+			$('#heartEditFloat').find(".active").removeClass('active');
+			$('#heart-palpitation2').addClass('active');
+		clickedSymptom = "Heart Palpitations";}
+	});
+	$('#heart-murmur2').click(function() {
+		if (editState == 1) {getHeartMurmurs2();
+			$('#heartEditFloat').find(".active").removeClass('active');
+			$('#heart-murmur2').addClass('active');
+		clickedSymptom = "Murmurs";}
+	});
+	$('#heart-chest2').click(function() {
+		if (editState == 1) {getHeartChestPain2();
+			$('#heartEditFloat').find(".active").removeClass('active');
+			$('#heart-chest2').addClass('active');
+		clickedSymptom = "Chest Pain";}
+	});
+	$('#heart-tightness2').click(function() {
+		if (editState == 1) {getHeartTightness2();
+			$('#heartEditFloat').find(".active").removeClass('active');
+			$('#heart-tightness2').addClass('active');
+		clickedSymptom = "Tightness or Pressure";}
+	});
 });
 
 //history function
@@ -897,7 +1409,8 @@ $(function () {
             //console.log(index);
             var hist = store.get('user');
             hist.history.splice( index-1, 1);
-            store.set('user', hist);
+			store.set('user', hist);
+			$('#historyMessage').text('Delete Successful');
         }
     });
 
@@ -920,6 +1433,17 @@ $(function () {
 			store.set('user', hist);
 
 		}
+		var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+        var HistoryTable = makeTable($('#historytbl'), data);
         //console.log(hist);
 	});
 
@@ -942,6 +1466,17 @@ $(function () {
 			store.set('user', hist);
 			
 		}
+		var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+        var HistoryTable = makeTable($('#historytbl'), data);
         //console.log(hist);
 	});
 
@@ -964,6 +1499,17 @@ $(function () {
 			store.set('user', hist);
 			
 		}
+		var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+        var HistoryTable = makeTable($('#historytbl'), data);
         //console.log(hist);
 	});
 	
@@ -982,13 +1528,37 @@ $(function () {
 			alert("select a record");
 		}
 	});
+
+	$("#abdomenEditBtn").click(function () {		
+		if (editState==0) editState = 1;
+		$('#abdomenDesc2').prop( "disabled", false );
+		$('#abdomenText').text('');
+	});
+
+	$("#headEditBtn").click(function () {		
+		if (editState==0) editState = 1;
+		$('#headDesc2').prop( "disabled", false );
+		$('#headText').text('');
+	});
+
+	$("#heartEditBtn").click(function () {		
+		if (editState==0) editState = 1;
+		$('#heartDesc2').prop( "disabled", false );
+		$('#heartText').text('');
+	});
 	
-	$("#saveChangeBtn").click(function () {
+	$("#abdomenUpdateBtn").click(function () {
+		if (editState == 1)  {
 		var index = $('#historytbl').find(".highlighted").index();
-        var symp = $('#editSymptom').val();
-        var dat = $('#editDate').val();
-		var desp = $('#editDesc').val();
-		var aa = $('#editArea').val();
+		var symp = clickedSymptom;
+		var d = new Date();
+		var month = d.getMonth()+1;
+		var	day = d.getDate();
+		var dat = d.getFullYear() + '-' +
+			(month<10 ? '0' : '') + month + '-' +
+			(day<10 ? '0' : '') + day;
+		var desp = $('#abdomenDesc2').val();
+		var aa = 'Abdomen'
 		var hist = store.get('user');
 		hist.history.splice( index-1, 1, { date : dat,
             area : aa,
@@ -996,7 +1566,9 @@ $(function () {
             description : desp
         });
 		store.set('user', hist);
-		clickHideDiv(this);
+		$('#abdomenText').text('Update successful');
+		editState = 0;
+		$('#abdomenDesc2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
         for (i = 0; i < hist.history.length; i++) {
@@ -1007,19 +1579,229 @@ $(function () {
             data.push([dat,aa,sym,desc]);
         }
 
-        var HistoryTable = makeTable($('#historytbl'), data);
+		var HistoryTable = makeTable($('#historytbl'), data);
+		$('#historytbl').find( 'tr' ).eq(index).addClass('highlighted');
+		}
+        //console.log(hist);
+	});
+
+	$("#headUpdateBtn").click(function () {
+		if (editState == 1)  {
+		var index = $('#historytbl').find(".highlighted").index();
+		var symp = clickedSymptom;
+		var d = new Date();
+		var month = d.getMonth()+1;
+		var	day = d.getDate();
+		var dat = d.getFullYear() + '-' +
+			(month<10 ? '0' : '') + month + '-' +
+			(day<10 ? '0' : '') + day;
+		var desp = $('#headDesc2').val();
+		var aa = 'Head'
+		var hist = store.get('user');
+		hist.history.splice( index-1, 1, { date : dat,
+            area : aa,
+            symptom : symp,
+            description : desp
+        });
+		store.set('user', hist);
+		$('#headText').text('Update successful');
+		editState = 0;
+		$('#headDesc2').prop( "disabled", true );
+		var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+		var HistoryTable = makeTable($('#historytbl'), data);
+		$('#historytbl').find( 'tr' ).eq(index).addClass('highlighted');
+		}
+        //console.log(hist);
+	});
+
+	$("#heartUpdateBtn").click(function () {
+		if (editState == 1)  {
+		var index = $('#historytbl').find(".highlighted").index();
+		var symp = clickedSymptom;
+		var d = new Date();
+		var month = d.getMonth()+1;
+		var	day = d.getDate();
+		var dat = d.getFullYear() + '-' +
+			(month<10 ? '0' : '') + month + '-' +
+			(day<10 ? '0' : '') + day;
+		var desp = $('#heartDesc2').val();
+		var aa = 'Heart'
+		var hist = store.get('user');
+		hist.history.splice( index-1, 1, { date : dat,
+            area : aa,
+            symptom : symp,
+            description : desp
+        });
+		store.set('user', hist);
+		$('#heartText').text('Update successful');
+		editState = 0;
+		$('#heartDesc2').prop( "disabled", true );
+		var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+		var HistoryTable = makeTable($('#historytbl'), data);
+		$('#historytbl').find( 'tr' ).eq(index).addClass('highlighted');
+		}
         //console.log(hist);
 	});
 
     $("#historytbl").on("click", "tr", function() {
-        var selected = $(this).hasClass("highlighted");
-        if ($(this).index()!=0) {
+		var selected = $(this).hasClass("highlighted");
+		var index = $(this).index();
+        if (index!=0) {
             $('#historytbl').find(".highlighted").removeClass('highlighted');
-            if(!selected) $(this).addClass("highlighted");
-            else $(this).removeClass("highlighted");
+            if(!selected) {
+				$(this).addClass("highlighted");
+				$('#abdomenEditFloat').css("display", "none");
+				$('#heartEditFloat').css("display", "none");
+				$('#headEditFloat').css("display", "none");
+				clickedSymptom = 0;				
+				$('#abdomenText').text('');
+				$('#headText').text('');
+				$('#heartText').text('');
+				var hist = store.get('user');
+				var recordArea = hist.history[index-1].area;
+				var recordSymptom = hist.history[index-1].symptom;
+				var recordDesc = hist.history[index-1].description;
+				if (recordArea == 'Abdomen') {
+					var position_x = document.getElementById('abdomenOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
+   					var position_y = document.getElementById('abdomenOpen').getBoundingClientRect().top+document.body.scrollTop;
+    				$('#abdomenEditFloat').css("left", position_x);
+    				$('#abdomenEditFloat').css("top", position_y);
+					$('#abdomenEditFloat').css("display", "block");
+					$('#abdomenDesc2').val(recordDesc);
+					if (recordSymptom == 'Normal') {
+						getNormalAbdomen2();
+						$('#abdomenEditFloat').find(".active").removeClass('active');
+						$('#abdomen-normal2').addClass('active');
+						clickedSymptom = "Normal";
+					}
+					else if (recordSymptom == 'Loss of Appetite') {
+						getAbdomenHunger2();
+						$('#abdomenEditFloat').find(".active").removeClass('active');
+						$('#abdomen-hunger2').addClass('active');
+						clickedSymptom = "Loss of Appetite";
+					}
+					else if (recordSymptom == 'Dehydration') {
+						getAbdomenDehydration2();
+						$('#abdomenEditFloat').find(".active").removeClass('active');
+						$('#abdomen-dehydration2').addClass('active');
+						clickedSymptom = "Dehydration";
+					}
+					else if (recordSymptom == 'Gas') {
+						getAbdomenGas2();
+						$('#abdomenEditFloat').find(".active").removeClass('active');
+						$('#abdomen-gas2').addClass('active');
+						clickedSymptom = "Gas";
+					}
+					else if (recordSymptom == 'Tender Abdomen') {
+						getAbdomenTender2();
+						$('#abdomenEditFloat').find(".active").removeClass('active');
+						$('#abdomen-tender2').addClass('active');
+						clickedSymptom = "Tender Abdomen";
+					}
+				} else if (recordArea == 'Heart') {
+					var position_x = document.getElementById('heartOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
+   					var position_y = document.getElementById('heartOpen').getBoundingClientRect().top+document.body.scrollTop;
+    				$('#heartEditFloat').css("left", position_x);
+    				$('#heartEditFloat').css("top", position_y);
+					$('#heartEditFloat').css("display", "block");					
+					$('#heartDesc2').val(recordDesc);
+					if (recordSymptom == 'Normal') {
+						getHeartNormal2();											
+						$('#heartEditFloat').find(".active").removeClass('active');
+						$('#heart-normal2').addClass('active');
+						clickedSymptom = "Normal";
+					}
+					else if (recordSymptom == 'Heart Palpitations') {getHeartPalpitations2();											
+						$('#heartEditFloat').find(".active").removeClass('active');						
+						$('#heart-palpitation2').addClass('active');
+						clickedSymptom = "Heart Palpitations";
+					}
+					else if (recordSymptom == 'Murmurs') {getHeartMurmurs2();											
+						$('#heartEditFloat').find(".active").removeClass('active');
+						$('#heart-murmur2').addClass('active');
+						clickedSymptom = "Murmurs";
+					}
+					else if (recordSymptom == 'Chest Pain') {getHeartChestPain2();											
+						$('#heartEditFloat').find(".active").removeClass('active');
+						$('#heart-chest2').addClass('active');
+						clickedSymptom = "Chest Pain";
+					}
+					else if (recordSymptom == 'Tightness or Pressure') {getHeartTightness2();											
+						$('#heartEditFloat').find(".active").removeClass('active');
+						$('#heart-tightness2').addClass('active');
+						clickedSymptom = "Tightness or Pressure";
+					}
+					
+				} else if (recordArea == 'Head') {
+					var position_x = document.getElementById('headOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
+   					var position_y = document.getElementById('headOpen').getBoundingClientRect().top+document.body.scrollTop;
+    				$('#headEditFloat').css("left", position_x);
+    				$('#headEditFloat').css("top", position_y);
+					$('#headEditFloat').css("display", "block");					
+					$('#headDesc2').val(recordDesc);
+					if (recordSymptom == 'Normal') {
+						getHeadNormal2();											
+						$('#headEditFloat').find(".active").removeClass('active');
+						$('#head-normal2').addClass('active');
+						clickedSymptom = "Normal";
+					}
+					else if (recordSymptom == 'Dizziness') {
+						getHeadDizziness2();											
+						$('#headEditFloat').find(".active").removeClass('active');
+						$('#head-dizzy2').addClass('active');
+						clickedSymptom = "Dizziness";
+					}
+					else if (recordSymptom == 'Headache') {
+						getHeadHeadache2();											
+						$('#headEditFloat').find(".active").removeClass('active');
+						$('#head-headache2').addClass('active');
+						clickedSymptom = "Headache";
+					}
+					else if (recordSymptom == 'Changes in Vision') {
+						getHeadVision2();											
+						$('#headEditFloat').find(".active").removeClass('active');
+						$('#head-vision2').addClass('active');
+						clickedSymptom = "Changes in Vision";
+					}
+					else if (recordSymptom == 'Vomiting') {
+						getHeadVomiting2();											
+						$('#headEditFloat').find(".active").removeClass('active');
+						$('#head-vomit2').addClass('active');
+						clickedSymptom = "Vomiting";
+					}
+
+				} else alert("no such area");
+			}
+            else {
+				$(this).removeClass("highlighted");
+				$('#abdomenEditFloat').css("display", "none");
+				$('#heartEditFloat').css("display", "none");
+				$('#headEditFloat').css("display", "none");
+				$('#abdomenText').text('');
+				$('#headText').text('');
+				$('#heartText').text('');
+			}
         }
-        //for update popup menu
-        
+		//for update popup menu
+		
     });
 
     $(document).ready(function() {
