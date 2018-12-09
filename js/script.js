@@ -8,7 +8,7 @@ function getNormalAbdomen(){
 		ts:ts,
 		apikey:api_key,
 		hash:hash,
-		ids:4kg8IIClzvLtC,
+		gif_id:"4kg8IIClzvLtC",
 		limit:10
 	})
 	.done(function(data){
@@ -97,3 +97,9 @@ function showAbdomen(){
 		console.log(err);
 	});
 }
+
+$(document).ready(function () {
+	$('#abdomen-normal').click(function() {
+		getNormalAbdomen();
+	});
+});
