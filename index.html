@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/store.everything.min.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/md5.min.js"></script>
     <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -46,6 +47,34 @@
                   save
                 </button>
               </div>
+    <button id="editbtn" type="button" class="btn btn-default btn-circle">edit</button>
+    <div id="editFloat" class="hover-window-style container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h6>edit record</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form id="editForm">
+                  Date: <input size="50" type="text" id="editDate"><br>
+                  Area: <input size="50" type="text" id="editArea"><br>
+                  Symptom: <input size="50" type="text" id="editSymptom"><br>
+                  Description: 
+                </form>
+                <textarea rows="4" cols="50" id="editDesc" form="editForm"></textarea>
+            </div>
+        </div>
+        <br>
+        <div>
+        <div>
+        <div class="row">
+            <button type="button" class="btn btn-primary margin-0-auto" id="saveChangeBtn">Save Changes</button>
+        </div>
+        </div>
+        </div>
+    </div>
               <br>
                 <div class="card card-body padding-2" id="historytbl">
                   

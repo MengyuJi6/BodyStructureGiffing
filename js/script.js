@@ -63,7 +63,51 @@ $(function () {
         });
         store.set('user', hist);
         //console.log(hist);
-    });
+	});
+	
+	$("#editbtn").click(function () {		
+		var index = $('#historytbl').find(".highlighted").index();
+		if (index != -1) {
+			clickShowDiv(this);
+			var hist = store.get('user');
+			$('#editDate').val(hist.history[index-1].date);
+			$('#editArea').val(hist.history[index-1].area);
+			$('#editSymptom').val(hist.history[index-1].symptom);
+			$('#editDesc').val(hist.history[index-1].description);
+			//console.log(hist);
+		}
+		else {
+			alert("select a record");
+		}
+	});
+	
+	$("#saveChangeBtn").click(function () {
+		var index = $('#historytbl').find(".highlighted").index();
+        var symp = $('#editSymptom').val();
+        var dat = $('#editDate').val();
+		var desp = $('#editDesc').val();
+		var aa = $('#editArea').val();
+		var hist = store.get('user');
+		hist.history.splice( index-1, 1, { date : dat,
+            area : aa,
+            symptom : symp,
+            description : desp
+        });
+		store.set('user', hist);
+		clickHideDiv(this);
+		var data = [["Date", "Area", "Symptom", "Description"]] //headers
+        var hist = store.get('user');
+        for (i = 0; i < hist.history.length; i++) {
+            var dat = hist.history[i].date;
+            var aa = hist.history[i].area;
+            var sym = hist.history[i].symptom;
+            var desc = hist.history[i].description;
+            data.push([dat,aa,sym,desc]);
+        }
+
+        var HistoryTable = makeTable($('#historytbl'), data);
+        //console.log(hist);
+	});
 
     $("#historytbl").on("click", "tr", function() {
         var selected = $(this).hasClass("highlighted");
