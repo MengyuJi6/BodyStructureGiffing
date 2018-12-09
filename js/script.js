@@ -1,6 +1,15 @@
 var api_key = "kZN6VfSXRAkZCOVr0G99mH3q84rdRY7T"
 var clickedSymptom = 0;
 
+var temp = store.get('user');
+if (temp == undefined) {
+	store.set('user', 
+	{	name:'Marcus',
+  		password:'123456',
+  		history: []
+	});
+}
+
 function searchAbdomen(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
