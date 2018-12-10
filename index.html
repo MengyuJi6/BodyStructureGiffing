@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title> GiffingBody </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> GiffingBody </title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jquery.imagemapster.js"></script>
+    <script type="text/javascript" src="js/store.everything.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/md5.min.js"></script>
     <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -34,35 +40,53 @@
               </button>
             </p>
             <div class="collapse" id="collapseTable">
-              <div class="card card-body padding-2">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Date</th>
-                      <th scope="col">Symptom</th>
-                      <th scope="col">Area</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>Mark</td>
-                      <td>Otto</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>Jacob</td>
-                      <td>Thornton</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>Larry</td>
-                      <td>the Bird</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="row">
+                <div class="col-sm-8">
+                    <div id="historyMessage"></div>
+                </div>
+                <div class="col-sm-2">
+                  <button id="deletebtn" class="btn btn-primary" type="button">
+                    delete
+                  </button>
+                  <!-- <button id="updatebtn" class="btn btn-primary" type="button"> -->
+                    <!-- update -->
+                  <!-- </button> -->
+                  <!-- <button id="editbtn" type="button" class="btn btn-default btn-circle">edit</button> -->
+      <div id="editFloat" class="hover-window-style2 container">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <h6>edit record</h6>
               </div>
-            </div>
+          </div>
+          <div class="row">
+              <div class="col-md-5">
+                  <form id="editForm">
+                    Date: <input size="50" type="text" id="editDate"><br>
+                    Area: <input size="50" type="text" id="editArea"><br>
+                    Symptom: <input size="50" type="text" id="editSymptom"><br>
+                    Description: 
+                  </form>
+                  <textarea rows="4" cols="50" id="editDesc" form="editForm"></textarea>
+              </div>
+          </div>
+          <br>
+          <div>
+          <div>
+          <div class="row">
+              <button type="button" class="btn btn-primary margin-0-auto" id="saveChangeBtn">Save Changes</button>
+          </div>
+          </div>
+          </div>
+      </div>
+                </div>
+                </div>
+      
+                <br>
+                  <div class="card card-body padding-2" id="historytbl">
+                    
+                  </div>
+              </div>
         </div>
         <div class="col-md-6">
             <img id="body_img" class="body-img" src="photos/humanbody.png" usemap="#bodymap" alt="body image">
@@ -76,6 +100,394 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+    <button id="abdomenOpen" type="button" class="btn btn-default btn-circle" onclick="clickShowDiv(this)"></button>
+    <div id="abdomenFloat" class="hover-window-style container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h6>abdomen</h6>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <div class="row margin-top-3" id="rectangle-abdomen"></div>
+            <div class="row margin-top-3">
+                <textarea class="form-control" id="abdomenDesc" rows="3" placeholder="Enter Description Here"></textarea>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-normal" class="btn btn-outline-secondary sys-btn" title="Abdomen is normal; no symptoms.">Normal</button>
+                    <!--<p id="abd-normal-text">Abdomen is normal; no symptoms.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-hunger" class="btn btn-outline-secondary sys-btn" title="No desire to eat, hunger wanes even after long periods without food. Cannot actually eat when trying.">Loss of Appetite</button>
+                    <!--<p id="abd-appetite-text">No desire to eat, hunger wanes even after long periods without food. Cannot actually eat when trying.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-dehydration" class="btn btn-outline-secondary sys-btn" title="Increased thirst, dry mouth. Decreased urine output and tired or sleepy.">Deyhydration</button>
+                    <!--<p id="abd-dehydration-text">Increased thirst, dry mouth. Decreased urine output and tired or sleepy.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-gas" class="btn btn-outline-secondary sys-btn" title="Burping, belching, passing gas. Pain, discomfort, swallowed air; IBS.">Gas</button>
+                    <!--<p id="abd-gas-text">Burping, belching, passing gas. Pain, discomfort, swallowed air; IBS.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-tender" class="btn btn-outline-secondary sys-btn" title="Abdominal pain, pale stool, bloating nausea or vomiting.">Tender Abdomen</button>
+                    <!--<p id="abd-tender-text">Abdominal pain, pale stool, bloating nausea or vomiting.</p>-->
+                </div>
+            </div>
+        </div>
+        <div class="row margin-top-3">
+            <button id="abdomenSaveBtn" type="button" class="btn btn-primary margin-0-auto">Save New Record</button>
+        </div>
+        <div class="row margin-top-3">
+            <div class="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control" placeholder="Search" id="search_abdomen" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" type="button" onclick="searchAbdomen()" >
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="abdomenEditFloat" class="hover-window-style container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h6>abdomen</h6>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0;editState=0;$('#abdomenText').text('');$('#historytbl').find('.highlighted').removeClass('highlighted')">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <div class="row margin-top-3 rectangle" id="rectangle-abdomen2"></div>
+            <div class="row margin-top-3">
+                <textarea class="form-control" disabled id="abdomenDesc2" rows="3" placeholder="Enter Description Here"></textarea>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-normal2" class="btn btn-outline-secondary sys-btn" title="Abdomen is normal; no symptoms.">Normal</button>
+                    <!--<p id="abd-normal-text">Abdomen is normal; no symptoms.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-hunger2" class="btn btn-outline-secondary sys-btn" title="No desire to eat, hunger wanes even after long periods without food. Cannot actually eat when trying.">Loss of Appetite</button>
+                    <!--<p id="abd-appetite-text">No desire to eat, hunger wanes even after long periods without food. Cannot actually eat when trying.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-dehydration2" class="btn btn-outline-secondary sys-btn" title="Increased thirst, dry mouth. Decreased urine output and tired or sleepy.">Deyhydration</button>
+                    <!--<p id="abd-dehydration-text">Increased thirst, dry mouth. Decreased urine output and tired or sleepy.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-gas2" class="btn btn-outline-secondary sys-btn" title="Burping, belching, passing gas. Pain, discomfort, swallowed air; IBS.">Gas</button>
+                    <!--<p id="abd-gas-text">Burping, belching, passing gas. Pain, discomfort, swallowed air; IBS.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="abdomen-tender2" class="btn btn-outline-secondary sys-btn" title="Abdominal pain, pale stool, bloating nausea or vomiting.">Tender Abdomen</button>
+                    <!--<p id="abd-tender-text">Abdominal pain, pale stool, bloating nausea or vomiting.</p>-->
+                </div>
+            </div>
+
+            <!--<div class="col-md-6">-->
+                <!--<div class="row">-->
+                    <!--<button type="button" id="abdomen-normal2" class="btn btn-secondary">Normal</button>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<button type="button" id="abdomen-hunger2" class="btn btn-secondary">Loss of Appetite</button>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<button type="button" id="abdomen-dehydration2" class="btn btn-secondary">Deyhydration</button>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<button type="button" id="abdomen-gas2" class="btn btn-secondary">Gas</button>-->
+                <!--</div>-->
+                <!--<div class="row">-->
+                    <!--<button type="button" id="abdomen-tender2" class="btn btn-secondary">Tender Abdomen</button>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div id='abdomenText' class='editText'></div>
+        <div class="row margin-top-3">
+            <button id="abdomenEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
+            <button id="abdomenUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
+        </div>
+    </div>
+
+
+    <!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+    <!--<button type="button" class="btn btn-default btn-circle" data-toggle="modal" data-target="#exampleModal"></button>-->
+  <!-- Modal -->
+  <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+    <!--<div class="modal-dialog" role="document">-->
+      <!--<div class="modal-content">-->
+        <!--<div class="modal-header">-->
+          <!--<h5 class="modal-title" id="exampleModalLabel">Abdomen</h5>-->
+          <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+            <!--<span aria-hidden="true">&times;</span>-->
+          <!--</button>-->
+        <!--</div>-->
+        <!--<div class="modal-body">-->
+          <!--<div class="column-left">-->
+            <!--<div id="rectangle"></div>-->
+            <!--<br>-->
+            <!--<textarea rows="4"> Enter Description Here </textarea>-->
+          <!--</div>-->
+          <!--<div class="column-right">-->
+            <!--<button type="button" class="btn btn-secondary">Normal</button>-->
+            <!--<button type="button" class="btn btn-secondary">Loss of Appetite</button>-->
+            <!--<button type="button" class="btn btn-secondary">Deyhydration</button>-->
+            <!--<button type="button" class="btn btn-secondary">Gas</button>-->
+            <!--<button type="button" class="btn btn-secondary">Tender Abdomen</button>-->
+            <!--<button type="button" class="btn btn-primary">Save: Create New Record</button>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="modal-footer">-->
+          <!--<div class="search-container">-->
+            <!--<form action="/action_page.php">-->
+              <!--<input type="text" placeholder="Search.." name="search">-->
+              <!--<button type="submit">Submit</button>-->
+            <!--</form>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!-- Head -->
+
+  <button id="headOpen" type="button" class="btn btn-default btn-circle" onclick="clickShowDiv(this)"></button>
+    <div id="headFloat" class="hover-window-style container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h6>head</h6>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">                                         
+            <div class="col-md-6">
+            <div class="row margin-top-3 rectangle" id="rectangle-head"></div>
+            <div class="row margin-top-3">
+                <textarea class="form-control" id="headDesc" rows="3" placeholder="Enter Description Here"></textarea>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row margin-top-3">
+                    <button type="button" id="head-normal" class="btn btn-outline-secondary sys-btn" title="Head is normal; no symptoms.">Normal</button>
+                    <!--<p id="head-normal-text">Head is normal; no symptoms.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-dizzy" class="btn btn-outline-secondary sys-btn" title="Faintness/weakness. Being lightheaded, off balance.">Dizziness</button>
+                    <!--<p id="head-dizzy-text">Faintness/weakness. Being lightheaded, off balance.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-headache" class="btn btn-outline-secondary sys-btn" title="Dull pain in head, tightness in forehead, tenderness in scalp.">Headache</button>
+                    <!--<p id="head-headache-text">Dull pain in head, tightness in forehead, tenderness in scalp.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-vision" class="btn btn-outline-secondary sys-btn" title="Severe, sudden eye pain. Blurred or double vision.">Changes in Vision</button>
+                    <!--<p id="head-vision-text">Severe, sudden eye pain. Blurred or double vision.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-vomit" class="btn btn-outline-secondary sys-btn" title="Motion sickness, intense pain. Emotional stress. Inability to keep down food.">Vomiting</button>
+                    <!--<p id="head-vomit-text">Motion sickness, intense pain. Emotional stress. Inability to keep down food.</p>-->
+                </div>
+            </div>
+        </div>
+        <div class="row margin-top-3">
+            <button id="headSaveBtn" type="button" class="btn btn-primary margin-0-auto">Save New Record</button>
+        </div>
+        <div class="row margin-top-3">
+            <div class="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control" placeholder="Search" id="search_head"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" type="button" onclick="searchHead()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="headEditFloat" class="hover-window-style container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h6>head</h6>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0;editState=0;$('#headText').text('');$('#historytbl').find('.highlighted').removeClass('highlighted')">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">                                         
+                <div class="col-md-6">
+                <div class="row margin-top-3 rectangle" id="rectangle-head2"></div>
+                <div class="row margin-top-3">
+                    <textarea disabled class="form-control" id="headDesc2" rows="3" placeholder="Enter Description Here"></textarea>
+                </div>
+                </div>
+            <div class="col-md-6">
+                <div class="row margin-top-3">
+                    <button type="button" id="head-normal2" class="btn btn-outline-secondary sys-btn" title="Head is normal; no symptoms.">Normal</button>
+                    <!--<p id="head-normal-text">Head is normal; no symptoms.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-dizzy2" class="btn btn-outline-secondary sys-btn" title="Faintness/weakness. Being lightheaded, off balance.">Dizziness</button>
+                    <!--<p id="head-dizzy-text">Faintness/weakness. Being lightheaded, off balance.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-headache2" class="btn btn-outline-secondary sys-btn" title="Dull pain in head, tightness in forehead, tenderness in scalp.">Headache</button>
+                    <!--<p id="head-headache-text">Dull pain in head, tightness in forehead, tenderness in scalp.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-vision2" class="btn btn-outline-secondary sys-btn" title="Severe, sudden eye pain. Blurred or double vision.">Changes in Vision</button>
+                    <!--<p id="head-vision-text">Severe, sudden eye pain. Blurred or double vision.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="head-vomit2" class="btn btn-outline-secondary sys-btn" title="Motion sickness, intense pain. Emotional stress. Inability to keep down food.">Vomiting</button>
+                    <!--<p id="head-vomit-text">Motion sickness, intense pain. Emotional stress. Inability to keep down food.</p>-->
+                </div>
+            </div>
+            </div>
+            <div id='headText' class='editText'></div>
+            <div class="row margin-top-3">
+                <button id="headEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
+                <button id="headUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
+            </div>            
+        </div>
+
+
+<!-- Heart -->
+
+  <button id="heartOpen" type="button" class="btn btn-default btn-circle" onclick="clickShowDiv(this)"></button>
+    <div id="heartFloat" class="hover-window-style container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h6>heart</h6>
+            </div>
+            <div class="col-md-4">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0">&times;</span>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <div class="row margin-top-3 rectangle" id="rectangle-heart"></div>
+            <div class="row margin-top-3">
+                <textarea class="form-control" id="heartDesc" rows="3" placeholder="Enter Description Here"></textarea>
+            </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-normal" class="btn btn-outline-secondary sys-btn" title="Heart is normal; no symptoms.">Normal</button>
+                    <!--<p id="heart-normal-text">Heart is normal; no symptoms.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-palpitation" class="btn btn-outline-secondary sys-btn" title="Heart skipping beats or has an extra beat. Heart racing, fluttering or pounding.">Heart Palpitations</button>
+                    <!--<p id="heart-palpitation-text">Heart skipping beats or has an extra beat. Heart racing, fluttering or pounding.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-murmur" class="btn btn-outline-secondary sys-btn" title="Heavy sweating, bluish fingertips/skin, unusual sound between heart beats. Shortness of breath.">Murmurs</button>
+                    <!--<p id="heart-murmur-text">Heavy sweating, bluish fingertips/skin, unusual sound between heart beats. Shortness of breath.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-chest" class="btn btn-outline-secondary sys-btn-2" title="Fainting, fluttering in chest, slow or fast heartbeat.">Arrhythmia/Chest Pain</button>
+                    <!--<p id="heart-chest-text">Fainting, fluttering in chest, slow or fast heartbeat.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-tightness" class="btn btn-outline-secondary sys-btn-2" title="Sharp, stabbing sensation, light headedness.">Tightness or Pressure</button>
+                    <!--<p id="heart-tightness-text">Sharp, stabbing sensation, light headedness.</p>-->
+                </div>
+            </div>
+        </div>
+        <div class="row margin-top-3">
+            <button id="heartSaveBtn" type="button" class="btn btn-primary margin-0-auto">Save New Record</button>
+        </div>
+        <div class="row margin-top-3">
+            <div class="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control" placeholder="Search" id="search_heart"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" type="button" onclick="searchHeart()">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="heartEditFloat" class="hover-window-style container">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <h6>heart</h6>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" onclick="clickHideDiv(this);clickedSymptom=0;editState=0;$('#heartText').text('');$('#historytbl').find('.highlighted').removeClass('highlighted')">&times;</span>
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <div class="row margin-top-3 rectangle" id="rectangle-heart2"></div>
+                <br>
+                <textarea disabled id="heartDesc2" rows="4" placeholder="Enter Description Here"></textarea>
+                </div>
+            <div class="col-md-6">
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-normal2" class="btn btn-outline-secondary sys-btn" title="Heart is normal; no symptoms.">Normal</button>
+                    <!--<p id="heart-normal-text">Heart is normal; no symptoms.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-palpitation2" class="btn btn-outline-secondary sys-btn" title="Heart skipping beats or has an extra beat. Heart racing, fluttering or pounding.">Heart Palpitations</button>
+                    <!--<p id="heart-palpitation-text">Heart skipping beats or has an extra beat. Heart racing, fluttering or pounding.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-murmur2" class="btn btn-outline-secondary sys-btn" title="Heavy sweating, bluish fingertips/skin, unusual sound between heart beats. Shortness of breath.">Murmurs</button>
+                    <!--<p id="heart-murmur-text">Heavy sweating, bluish fingertips/skin, unusual sound between heart beats. Shortness of breath.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-chest2" class="btn btn-outline-secondary sys-btn-2" title="Fainting, fluttering in chest, slow or fast heartbeat.">Arrhythmia/Chest Pain</button>
+                    <!--<p id="heart-chest-text">Fainting, fluttering in chest, slow or fast heartbeat.</p>-->
+                </div>
+                <div class="row margin-top-3">
+                    <button type="button" id="heart-tightness2" class="btn btn-outline-secondary sys-btn-2" title="Sharp, stabbing sensation, light headedness.">Tightness or Pressure</button>
+                    <!--<p id="heart-tightness-text">Sharp, stabbing sensation, light headedness.</p>-->
+                </div>
+            </div>
+            </div>
+            <div id='heartText' class='editText'></div>
+            <div class="row">
+                <button id="heartEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
+                <button id="heartUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
+            </div>
+        </div>
+
+
 </div>
 </body>
 </html>
