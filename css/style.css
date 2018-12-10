@@ -2,6 +2,9 @@
 .margin-0-auto{
     margin: 0 auto;
 }
+.margin-top-3{
+    margin-top: 3px;
+}
 .padding-2{
     padding: 2px !important;
 }
@@ -45,6 +48,27 @@
 
 /*popup css*/
 /* Modal Background */
+.sys-btn{
+    width: 144px;
+    height: 36px;
+    margin: 0 auto;
+}
+.sys-btn-2{
+    width: 170px;
+    height: 36px;
+    margin: 0 auto;
+    padding: 5px;
+}
+#rectangle-abdomen{
+    width: 165px;
+    height: 110px;
+    border: dotted rgb(126, 126, 126)
+}
+.rectangle{
+    width: 165px;
+    height: 110px;
+    border: dotted rgb(126, 126, 126)
+}
 #abdomenOpen {
     position: absolute;
     top: 57%;
@@ -102,7 +126,7 @@
     position: absolute;
     border: 2px solid rgb(17,45,138);
     border-radius: 10px;
-    height: 320px;
+    height: 327px;
     width: 350px;
     display: none;
 }
@@ -119,13 +143,13 @@
     position: absolute;
     border: 2px solid rgb(17,45,138);
     border-radius: 10px;
-    height: 320px;
+    height: 327px;
     width: 350px;
     display: none;
     z-index: 200;
 }
 
-#custom-search-input{
+.custom-search-input{
     width: 100%;
     height: 35px;
     padding: 3px;
@@ -134,13 +158,13 @@
     background-color: #fff;
 }
 
-#custom-search-input input{
+.custom-search-input input{
     border: 0;
     box-shadow: none;
     height: 100%;
 }
 
-#custom-search-input button{
+.custom-search-input button{
     margin: 2px 0 0 0;
     background: none;
     box-shadow: none;
@@ -150,7 +174,7 @@
     border-left: solid 1px #ccc;
 }
 
-#custom-search-input button:hover{
+.custom-search-input button:hover{
     border: 0;
     box-shadow: none;
     border-left: solid 1px #ccc;
