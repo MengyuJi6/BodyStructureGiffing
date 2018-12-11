@@ -1421,7 +1421,7 @@ $(function () {
     $("#updatebtn").click(function () {        
         var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1468,7 +1468,7 @@ $(function () {
 		}
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1501,7 +1501,7 @@ $(function () {
 		}
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1534,7 +1534,7 @@ $(function () {
 		}
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1604,7 +1604,7 @@ $(function () {
 		$('#abdomenDesc2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1642,7 +1642,7 @@ $(function () {
 		$('#headDesc2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1680,7 +1680,7 @@ $(function () {
 		$('#heartDesc2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1841,7 +1841,7 @@ $(function () {
     $(document).ready(function() {
         var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
