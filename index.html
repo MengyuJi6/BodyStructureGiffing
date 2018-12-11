@@ -98,11 +98,11 @@
         <div class="col-md-6">
             <img id="body_img" class="body-img" src="photos/humanbody copy.png" usemap="#bodymap" alt="body image">
             <map name="bodymap">
-                <area shape="circle" id="head" data-key="head" href="#" coords="360,70,50" onclick="clickShowDivHead();"/>
+                <area shape="circle" id="head" data-key="head" href="#" coords="360,70,50" onclick="clickShowDivHead();hideHistoryPopup();$('#historytbl').find('.highlighted').removeClass('highlighted')"/>
 
-                <area shape="circle" data-key="heart" href="#" coords="360,180,50" onclick="clickShowDivHeart();" />
+                <area shape="circle" data-key="heart" href="#" coords="360,180,50" onclick="clickShowDivHeart();hideHistoryPopup();$('#historytbl').find('.highlighted').removeClass('highlighted')" />
 
-                <area shape="circle" data-key="abdomen" href="#" coords="360,300,50" onclick="clickShowDivAbdomen();"/>
+                <area shape="circle" data-key="abdomen" href="#" coords="360,300,50" onclick="clickShowDivAbdomen();hideHistoryPopup();$('#historytbl').find('.highlighted').removeClass('highlighted')"/>
 
             </map>
         </div>
@@ -159,7 +159,7 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control" placeholder="Search" id="search_abdomen" />
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="searchAbdomen();clickedSymptom=$('#search_abdomen').val();$(document).find('.active').removeClass('active')" >
+                        <button class="btn btn-info" type="button" onclick="searchAbdomen();clickedSymptom=$('#search_abdomen').val();$(document).find('.active').removeClass('active');$('#abdomenSaveText').text('')" >
                             <i class="fas fa-search"></i>
                         </button>
                     </span>
@@ -238,7 +238,7 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control" placeholder="Search" id="search_abdomen2" />
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="searchAbdomen2();clickedSymptom=$('#search_abdomen2').val();$(document).find('.active').removeClass('active')" >
+                        <button class="btn btn-info" type="button" onclick="searchAbdomen2();clickedSymptom=$('#search_abdomen2').val();$(document).find('.active').removeClass('active');$('#abdomenText').text('')" >
                             <i class="fas fa-search"></i>
                         </button>
                     </span>
@@ -342,7 +342,7 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control" placeholder="Search" id="search_head"/>
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="searchHead();clickedSymptom=$('#search_head').val();$(document).find('.active').removeClass('active')">
+                        <button class="btn btn-info" type="button" onclick="searchHead();clickedSymptom=$('#search_head').val();$(document).find('.active').removeClass('active');$('#headSaveText').text('')">
                           <i class="fas fa-search"></i>
                         </button>
                     </span>
@@ -402,7 +402,7 @@
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control" placeholder="Search" id="search_head2"/>
                         <span class="input-group-btn">
-                            <button class="btn btn-info" type="button" onclick="searchHead2();clickedSymptom=$('#search_head2').val();$(document).find('.active').removeClass('active')">
+                            <button class="btn btn-info" type="button" onclick="searchHead2();clickedSymptom=$('#search_head2').val();$(document).find('.active').removeClass('active');$('#headText').text('')">
                                 <i class="fas fa-search"></i>
                             </button>
                         </span>
@@ -466,7 +466,7 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control" placeholder="Search" id="search_heart"/>
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="searchHeart();clickedSymptom=$('#search_heart').val();$(document).find('.active').removeClass('active')">
+                        <button class="btn btn-info" type="button" onclick="searchHeart();clickedSymptom=$('#search_heart').val();$(document).find('.active').removeClass('active');$('#heartSaveText').text('')">
                             <i class="fas fa-search"></i>
                         </button>
                     </span>
@@ -526,7 +526,7 @@
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control" placeholder="Search" id="search_heart2"/>
                         <span class="input-group-btn">
-                            <button class="btn btn-info" type="button" onclick="searchHeart2();clickedSymptom=$('#search_heart2').val();$(document).find('.active').removeClass('active')">
+                            <button class="btn btn-info" type="button" onclick="searchHeart2();clickedSymptom=$('#search_heart2').val();$(document).find('.active').removeClass('active');$('#heartText').text('')">
                                 <i class="fas fa-search"></i>
                             </button>
                         </span>
