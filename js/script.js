@@ -11,6 +11,22 @@ if (temp == undefined) {
 	});
 }
 
+function hideDiv(){
+	if ($("#abdomenFloat").css("display","block")){
+        $("#abdomenFloat").css("display","none");
+    }
+    if ($("#heartFloat").css("display","block")){
+        $("#heartFloat").css("display","none");
+    }
+    if ($("#headFloat").css("display","block")){
+        $("#headFloat").css("display","none");
+    }
+}
+
+$(document).ready(function(){
+	$("collapse").scroll();
+})
+
 function searchAbdomen(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
@@ -18,7 +34,9 @@ function searchAbdomen(){
 	var search_item_copy = document.getElementById("search_abdomen").value;
 	var search_item = search_item_copy.toString();
 	// var id1 = '4kg8IIClzvLtC';
-
+	if (search_item_copy == 0){
+		alert("Please enter the search item!");
+	}
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -47,10 +65,12 @@ function searchHead(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
 	var url = 'https://api.giphy.com/v1/gifs/search';
-	var search_item_copy = document.getElementById("search_head").value;
-	var search_item = search_item_copy.toString();
+	var search_item_copy_2 = document.getElementById("search_head").value;
+	var search_item = search_item_copy_2.toString();
 	// var id1 = '4kg8IIClzvLtC';
-
+	if(search_item_copy_2 == 0){
+		alert("Please enter the search item!");
+	}
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -81,7 +101,9 @@ function searchHeart(){
 	var search_item_copy = document.getElementById("search_heart").value;
 	var search_item = search_item_copy.toString();
 	// var id1 = '4kg8IIClzvLtC';
-
+	if(search_item_copy == 0){
+		alert("Please enter the search item!");
+	}
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -1684,8 +1706,8 @@ $(function () {
 				var recordSymptom = hist.history[index-1].symptom;
 				var recordDesc = hist.history[index-1].description;
 				if (recordArea == 'Abdomen') {
-					var position_x = document.getElementById('abdomenOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
-   					var position_y = document.getElementById('abdomenOpen').getBoundingClientRect().top+document.body.scrollTop;
+					var position_x = 850;
+   					var position_y = 400;
     				$('#abdomenEditFloat').css("left", position_x);
     				$('#abdomenEditFloat').css("top", position_y);
 					$('#abdomenEditFloat').css("display", "block");
@@ -1721,8 +1743,8 @@ $(function () {
 						clickedSymptom = "Tender Abdomen";
 					}
 				} else if (recordArea == 'Heart') {
-					var position_x = document.getElementById('heartOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
-   					var position_y = document.getElementById('heartOpen').getBoundingClientRect().top+document.body.scrollTop;
+					var position_x = 900;
+   					var position_y = 260;
     				$('#heartEditFloat').css("left", position_x);
     				$('#heartEditFloat').css("top", position_y);
 					$('#heartEditFloat').css("display", "block");					
@@ -1755,8 +1777,8 @@ $(function () {
 					}
 					
 				} else if (recordArea == 'Head') {
-					var position_x = document.getElementById('headOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
-   					var position_y = document.getElementById('headOpen').getBoundingClientRect().top+document.body.scrollTop;
+					var position_x = 800;
+   					var position_y = 130;
     				$('#headEditFloat').css("left", position_x);
     				$('#headEditFloat').css("top", position_y);
 					$('#headEditFloat').css("display", "block");					
