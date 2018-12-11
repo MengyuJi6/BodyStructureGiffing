@@ -23,7 +23,7 @@
     height: 788px;
     opacity: 100;
     position: absolute;
-    left: 0;
+    left: 0px;
     top: 60px;
     padding: 0;
     border: 0;
@@ -35,7 +35,7 @@
     z-index: 100;
     width:400px;
     height:600px;
-    overflow:scroll;"
+    overflow:scroll;
 }
 
 .highlighted {
@@ -72,10 +72,12 @@
     height: 110px;
     border: dotted rgb(126, 126, 126)
 }
+
+
 #abdomenOpen {
     position: absolute;
-    top: 57%;
-    left: 56%;
+    top: 400px;
+    left: 720px;
     width: 40px;
     height: 40px;
     background-color: Transparent;

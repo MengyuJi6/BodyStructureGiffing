@@ -11,11 +11,17 @@ if (temp == undefined) {
 	});
 }
 
-// function showAbdomen(){
-// 	clickShowDiv(this);
-// 	clickHideDiv("#headFloat")
-// 	clickHideDiv("#heartFloat")
-// }
+function hideDiv(){
+	if ($("#abdomenFloat").css("display","block")){
+        $("#abdomenFloat").css("display","none");
+    }
+    if ($("#heartFloat").css("display","block")){
+        $("#heartFloat").css("display","none");
+    }
+    if ($("#headFloat").css("display","block")){
+        $("#headFloat").css("display","none");
+    }
+}
 
 $(document).ready(function(){
 	$("collapse").scroll();
@@ -1700,8 +1706,8 @@ $(function () {
 				var recordSymptom = hist.history[index-1].symptom;
 				var recordDesc = hist.history[index-1].description;
 				if (recordArea == 'Abdomen') {
-					var position_x = document.getElementById('abdomenOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
-   					var position_y = document.getElementById('abdomenOpen').getBoundingClientRect().top+document.body.scrollTop;
+					var position_x = 850;
+   					var position_y = 400;
     				$('#abdomenEditFloat').css("left", position_x);
     				$('#abdomenEditFloat').css("top", position_y);
 					$('#abdomenEditFloat').css("display", "block");
@@ -1737,8 +1743,8 @@ $(function () {
 						clickedSymptom = "Tender Abdomen";
 					}
 				} else if (recordArea == 'Heart') {
-					var position_x = document.getElementById('heartOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
-   					var position_y = document.getElementById('heartOpen').getBoundingClientRect().top+document.body.scrollTop;
+					var position_x = 900;
+   					var position_y = 260;
     				$('#heartEditFloat').css("left", position_x);
     				$('#heartEditFloat').css("top", position_y);
 					$('#heartEditFloat').css("display", "block");					
@@ -1771,8 +1777,8 @@ $(function () {
 					}
 					
 				} else if (recordArea == 'Head') {
-					var position_x = document.getElementById('headOpen').getBoundingClientRect().left+document.body.scrollLeft+135;
-   					var position_y = document.getElementById('headOpen').getBoundingClientRect().top+document.body.scrollTop;
+					var position_x = 800;
+   					var position_y = 130;
     				$('#headEditFloat').css("left", position_x);
     				$('#headEditFloat').css("top", position_y);
 					$('#headEditFloat').css("display", "block");					
