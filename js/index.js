@@ -38,3 +38,15 @@ function clickHideDiv(obj){
     $(obj).parent().parent().parent().parent().css("display", "none");
     // $("#" + id.toString()).attr("display", "none");
 }
+
+function hideHistoryPopup(){
+    $('#abdomenEditFloat').css("display", "none");
+    $('#headEditFloat').css("display", "none");
+    $('#heartEditFloat').css("display", "none");
+}
+
+function hidePopup(){
+    $('#abdomenFloat').css("display", "none");
+    $('#headFloat').css("display", "none");
+    $('#heartFloat').css("display", "none");
+}
