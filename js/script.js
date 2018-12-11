@@ -11,6 +11,16 @@ if (temp == undefined) {
 	});
 }
 
+// function showAbdomen(){
+// 	clickShowDiv(this);
+// 	clickHideDiv("#headFloat")
+// 	clickHideDiv("#heartFloat")
+// }
+
+$(document).ready(function(){
+	$("collapse").scroll();
+})
+
 function searchAbdomen(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
@@ -18,7 +28,9 @@ function searchAbdomen(){
 	var search_item_copy = document.getElementById("search_abdomen").value;
 	var search_item = search_item_copy.toString();
 	// var id1 = '4kg8IIClzvLtC';
-
+	if (search_item_copy == 0){
+		alert("Please enter the search item!");
+	}
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -47,10 +59,12 @@ function searchHead(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
 	var url = 'https://api.giphy.com/v1/gifs/search';
-	var search_item_copy = document.getElementById("search_head").value;
-	var search_item = search_item_copy.toString();
+	var search_item_copy_2 = document.getElementById("search_head").value;
+	var search_item = search_item_copy_2.toString();
 	// var id1 = '4kg8IIClzvLtC';
-
+	if(search_item_copy_2 == 0){
+		alert("Please enter the search item!");
+	}
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -81,7 +95,9 @@ function searchHeart(){
 	var search_item_copy = document.getElementById("search_heart").value;
 	var search_item = search_item_copy.toString();
 	// var id1 = '4kg8IIClzvLtC';
-
+	if(search_item_copy == 0){
+		alert("Please enter the search item!");
+	}
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
