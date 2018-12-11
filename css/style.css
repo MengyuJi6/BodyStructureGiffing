@@ -131,7 +131,7 @@
     position: absolute;
     border: 2px solid rgb(17,45,138);
     border-radius: 10px;
-    height: 327px;
+    height: 380px;
     width: 380px;
     display: none;
 }
@@ -148,7 +148,7 @@
     position: absolute;
     border: 2px solid rgb(17,45,138);
     border-radius: 10px;
-    height: 327px;
+    height: 380px;
     width: 350px;
     display: none;
     z-index: 200;

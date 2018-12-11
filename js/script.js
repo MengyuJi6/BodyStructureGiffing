@@ -11,22 +11,6 @@ if (temp == undefined) {
 	});
 }
 
-function hideDiv(){
-	if ($("#abdomenFloat").css("display","block")){
-        $("#abdomenFloat").css("display","none");
-    }
-    if ($("#heartFloat").css("display","block")){
-        $("#heartFloat").css("display","none");
-    }
-    if ($("#headFloat").css("display","block")){
-        $("#headFloat").css("display","none");
-    }
-}
-
-$(document).ready(function(){
-	$("collapse").scroll();
-})
-
 function searchAbdomen(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
@@ -34,9 +18,7 @@ function searchAbdomen(){
 	var search_item_copy = document.getElementById("search_abdomen").value;
 	var search_item = search_item_copy.toString();
 	// var id1 = '4kg8IIClzvLtC';
-	if (search_item_copy == 0){
-		alert("Please enter the search item!");
-	}
+
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -65,12 +47,10 @@ function searchHead(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
 	var url = 'https://api.giphy.com/v1/gifs/search';
-	var search_item_copy_2 = document.getElementById("search_head").value;
-	var search_item = search_item_copy_2.toString();
+	var search_item_copy = document.getElementById("search_head").value;
+	var search_item = search_item_copy.toString();
 	// var id1 = '4kg8IIClzvLtC';
-	if(search_item_copy_2 == 0){
-		alert("Please enter the search item!");
-	}
+
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -101,9 +81,7 @@ function searchHeart(){
 	var search_item_copy = document.getElementById("search_heart").value;
 	var search_item = search_item_copy.toString();
 	// var id1 = '4kg8IIClzvLtC';
-	if(search_item_copy == 0){
-		alert("Please enter the search item!");
-	}
+
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -118,6 +96,100 @@ function searchHeart(){
 		rectangle.innherHTML = htmlUrl;
 		$('#rectangle-heart').empty();
 		$('#rectangle-heart').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function searchAbdomen2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs/search';
+	var search_item_copy = document.getElementById("search_abdomen2").value;
+	var search_item = search_item_copy.toString();
+	// var id1 = '4kg8IIClzvLtC';
+
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		q:search_item,
+		limit:6
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-abdomen2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-abdomen2').empty();
+		$('#rectangle-abdomen2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+
+function searchHead2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs/search';
+	var search_item_copy = document.getElementById("search_head2").value;
+	var search_item = search_item_copy.toString();
+	// var id1 = '4kg8IIClzvLtC';
+
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		q:search_item,
+		limit:6
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-head2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-head2').empty();
+		$('#rectangle-head2').append(htmlUrl)
+		// for(var i=0;i<10;i++){
+		// 	$('#result').append(data.data.results[i]);
+		// }
+	})
+	.fail(function(err){
+		console.log(err);
+	});
+}
+
+function searchHeart2(){
+	var ts = new Date().getTime();
+	var hash = md5(ts+api_key).toString();
+	var url = 'https://api.giphy.com/v1/gifs/search';
+	var search_item_copy = document.getElementById("search_heart2").value;
+	var search_item = search_item_copy.toString();
+	// var id1 = '4kg8IIClzvLtC';
+
+	$.getJSON(url,{
+		ts:ts,
+		apikey:api_key,
+		hash:hash,
+		q:search_item,
+		limit:6
+	})
+	.done(function(response){
+		imgUrl = response.data[0].images.original.url;
+		htmlUrl = '<img src="'+imgUrl+'" width="150" height="100"/>'
+		var rectangle = document.getElementById("rectangle-heart2")
+		rectangle.innherHTML = htmlUrl;
+		$('#rectangle-heart2').empty();
+		$('#rectangle-heart2').append(htmlUrl)
 		// for(var i=0;i<10;i++){
 		// 	$('#result').append(data.data.results[i]);
 		// }
@@ -271,7 +343,7 @@ function getHeadNormal(){
 	var ts = new Date().getTime();
 	var hash = md5(ts+api_key).toString();
 	var url = 'https://api.giphy.com/v1/gifs';
-	var id1 = '4kg8IIClzvLtC';
+	var id1 = 'yoJC2GBlQUYFF12X3W';
 	$.getJSON(url,{
 		ts:ts,
 		apikey:api_key,
@@ -1257,62 +1329,92 @@ $(document).ready(function () {
 
 	$('#abdomen-normal').click(function() {
 		getNormalAbdomen();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-normal').addClass('active');
 		clickedSymptom = "Normal";
 	});
 	$('#abdomen-hunger').click(function() {
 		getAbdomenHunger();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-hunger').addClass('active');
 		clickedSymptom = "Loss of Appetite";
 	});
 	$('#abdomen-dehydration').click(function() {
 		getAbdomenDehydration();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-dehydration').addClass('active');
 		clickedSymptom = "Dehydration";
 	});
 	$('#abdomen-gas').click(function() {
 		getAbdomenGas();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-gas').addClass('active');
 		clickedSymptom = "Gas";
 	});
 	$('#abdomen-tender').click(function() {
 		getAbdomenTender();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-tender').addClass('active');
 		clickedSymptom = "Tender Abdomen";
 	});
 	$('#head-normal').click(function() {
 		getHeadNormal();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-normal').addClass('active');
 		clickedSymptom = "Normal";
 	});
 	$('#head-dizzy').click(function() {
 		getHeadDizziness();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-dizzy').addClass('active');
 		clickedSymptom = "Dizziness";
 	});
 	$('#head-headache').click(function() {
 		getHeadHeadache();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-headache').addClass('active');
 		clickedSymptom = "Headache";
 	});
 	$('#head-vision').click(function() {
 		getHeadVision();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-vision').addClass('active');
 		clickedSymptom = "Changes in Vision";
 	});
 	$('#head-vomit').click(function() {
 		getHeadVomiting();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-vomit').addClass('active');
 		clickedSymptom = "Vomiting";
 	});
 	$('#heart-normal').click(function() {
 		getHeartNormal();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-normal').addClass('active');
 		clickedSymptom = "Normal";
 	});
 	$('#heart-palpitation').click(function() {
 		getHeartPalpitations();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-palpitation').addClass('active');
 		clickedSymptom = "Heart Palpitations";
 	});
 	$('#heart-murmur').click(function() {
 		getHeartMurmurs();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-murmur').addClass('active');
 		clickedSymptom = "Murmurs";
 	});
 	$('#heart-chest').click(function() {
 		getHeartChestPain();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-chest').addClass('active');
 		clickedSymptom = "Chest Pain";
 	});
 	$('#heart-tightness').click(function() {
 		getHeartTightness();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-tightness').addClass('active');
 		clickedSymptom = "Tightness or Pressure";
 	});
 
@@ -1413,7 +1515,7 @@ $(function () {
     $("#updatebtn").click(function () {        
         var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1429,10 +1531,11 @@ $(function () {
         if (index != -1) {
             $('#historytbl').find('.highlighted').remove();
             //console.log(index);
-            var hist = store.get('user');
-            hist.history.splice( index-1, 1);
+			var hist = store.get('user');
+			var l=hist.history.length;
+            hist.history.splice( l-index, 1);
 			store.set('user', hist);
-			$('#historyMessage').text('Delete Successful');			
+			$('#historyMessage').text('Delete Successfully');			
 			$('#abdomenEditFloat').css("display", "none");
 			$('#heartEditFloat').css("display", "none");
 			$('#headEditFloat').css("display", "none");
@@ -1456,11 +1559,12 @@ $(function () {
             	description : desp
         	});
 			store.set('user', hist);
+		$('#abdomenSaveText').text('Save successfully');
 
 		}
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1489,11 +1593,12 @@ $(function () {
             	description : desp
         	});
 			store.set('user', hist);
+		$('#headSaveText').text('Save successfully');
 			
 		}
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1522,11 +1627,12 @@ $(function () {
             	description : desp
         	});
 			store.set('user', hist);
+		$('#heartSaveText').text('Save successfully');
 			
 		}
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1585,18 +1691,19 @@ $(function () {
 		var desp = $('#abdomenDesc2').val();
 		var aa = 'Abdomen'
 		var hist = store.get('user');
-		hist.history.splice( index-1, 1, { date : dat,
+		var l = hist.history.length;
+		hist.history.splice( l-index, 1, { date : dat,
             area : aa,
             symptom : symp,
             description : desp
         });
 		store.set('user', hist);
-		$('#abdomenText').text('Update successful');
+		$('#abdomenText').text('Update successfully');
 		editState = 0;
 		$('#abdomenDesc2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1623,18 +1730,19 @@ $(function () {
 		var desp = $('#headDesc2').val();
 		var aa = 'Head'
 		var hist = store.get('user');
-		hist.history.splice( index-1, 1, { date : dat,
+		var l = hist.history.length;
+		hist.history.splice( l-index, 1, { date : dat,
             area : aa,
             symptom : symp,
             description : desp
         });
 		store.set('user', hist);
-		$('#headText').text('Update successful');
+		$('#headText').text('Update successfully');
 		editState = 0;
 		$('#headDesc2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1661,18 +1769,19 @@ $(function () {
 		var desp = $('#heartDesc2').val();
 		var aa = 'Heart'
 		var hist = store.get('user');
-		hist.history.splice( index-1, 1, { date : dat,
+		var l = hist.history.length;
+		hist.history.splice( l-index, 1, { date : dat,
             area : aa,
             symptom : symp,
             description : desp
         });
 		store.set('user', hist);
-		$('#heartText').text('Update successful');
+		$('#heartText').text('Update successfully');
 		editState = 0;
 		$('#heartDesc2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1693,18 +1802,18 @@ $(function () {
             $('#historytbl').find(".highlighted").removeClass('highlighted');
             if(!selected) {
 				$(this).addClass("highlighted");
-				$('#abdomenEditFloat').css("display", "none");
-				$('#heartEditFloat').css("display", "none");
-				$('#headEditFloat').css("display", "none");
+				hideHistoryPopup();
+				hidePopup();
 				clickedSymptom = 0;				
 				$('#abdomenText').text('');
 				$('#headText').text('');
 				$('#heartText').text('');
 				$('#historyMessage').text('');
 				var hist = store.get('user');
-				var recordArea = hist.history[index-1].area;
-				var recordSymptom = hist.history[index-1].symptom;
-				var recordDesc = hist.history[index-1].description;
+				var l = hist.history.length;
+				var recordArea = hist.history[l-index].area;
+				var recordSymptom = hist.history[l-index].symptom;
+				var recordDesc = hist.history[l-index].description;
 				if (recordArea == 'Abdomen') {
 					var position_x = 850;
    					var position_y = 400;
@@ -1742,8 +1851,14 @@ $(function () {
 						$('#abdomen-tender2').addClass('active');
 						clickedSymptom = "Tender Abdomen";
 					}
+					else {
+						clickedSymptom = recordSymptom;
+						$('#search_abdomen2').val(recordSymptom);
+						searchAbdomen2();									
+						$('#abdomenEditFloat').find(".active").removeClass('active');						
+					}
 				} else if (recordArea == 'Heart') {
-					var position_x = 900;
+					var position_x = 850;
    					var position_y = 260;
     				$('#heartEditFloat').css("left", position_x);
     				$('#heartEditFloat').css("top", position_y);
@@ -1774,6 +1889,12 @@ $(function () {
 						$('#heartEditFloat').find(".active").removeClass('active');
 						$('#heart-tightness2').addClass('active');
 						clickedSymptom = "Tightness or Pressure";
+					}
+					else {
+						clickedSymptom = recordSymptom;
+						$('#search_heart2').val(recordSymptom);
+						searchHeart2();								
+						$('#heartEditFloat').find(".active").removeClass('active');						
 					}
 					
 				} else if (recordArea == 'Head') {
@@ -1812,15 +1933,19 @@ $(function () {
 						$('#headEditFloat').find(".active").removeClass('active');
 						$('#head-vomit2').addClass('active');
 						clickedSymptom = "Vomiting";
+					} 
+					else {
+						clickedSymptom = recordSymptom;
+						$('#search_head2').val(recordSymptom);
+						searchHead2();									
+						$('#headEditFloat').find(".active").removeClass('active');						
 					}
 
 				} else alert("no such area");
 			}
             else {
 				$(this).removeClass("highlighted");
-				$('#abdomenEditFloat').css("display", "none");
-				$('#heartEditFloat').css("display", "none");
-				$('#headEditFloat').css("display", "none");
+				hideHistoryPopup();
 				$('#abdomenText').text('');
 				$('#headText').text('');
 				$('#heartText').text('');
@@ -1833,7 +1958,7 @@ $(function () {
     $(document).ready(function() {
         var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
-        for (i = 0; i < hist.history.length; i++) {
+        for (i = hist.history.length-1; i >= 0; i--) {
             var dat = hist.history[i].date;
             var aa = hist.history[i].area;
             var sym = hist.history[i].symptom;
@@ -1859,4 +1984,16 @@ function makeTable(container, data) {
         table.append(row);
     });
     return container.html(table);
+}
+
+function hideDiv(){
+	if ($("#abdomenFloat").css("display","block")){
+        $("#abdomenFloat").css("display","none");
+    }
+    if ($("#heartFloat").css("display","block")){
+        $("#heartFloat").css("display","none");
+    }
+    if ($("#headFloat").css("display","block")){
+        $("#headFloat").css("display","none");
+    }
 }

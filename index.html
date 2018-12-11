@@ -96,7 +96,7 @@
               </div>
         </div>
         <div class="col-md-6">
-            <img id="body_img" class="body-img" src="photos/humanbody.png" usemap="#bodymap" alt="body image">
+            <img id="body_img" class="body-img" src="photos/humanbody copy.png" usemap="#bodymap" alt="body image">
             <map name="bodymap">
                 <area shape="circle" id="head" data-key="head" href="#" coords="360,70,50" onclick="clickShowDivHead();"/>
 
@@ -108,7 +108,7 @@
         </div>
         <!-- <div class="col-md-3"></div> -->
     </div>
-    <button id="abdomenOpen" type="button" class="btn btn-default btn-circle" coords="360,300,50" onclick="clickShowDivAbdomen(this)"></button>
+ <!--    <button id="abdomenOpen" type="button" class="btn btn-default btn-circle" coords="360,300,50" onclick="clickShowDivAbdomen(this)"></button> -->
     <div id="abdomenFloat" class="hover-window-style container">
         <div class="row">
             <div class="col-md-4"></div>
@@ -159,13 +159,14 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control" placeholder="Search" id="search_abdomen" />
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="searchAbdomen()" >
+                        <button class="btn btn-info" type="button" onclick="searchAbdomen();clickedSymptom=$('#search_abdomen').val();$(document).find('.active').removeClass('active')" >
                             <i class="fas fa-search"></i>
                         </button>
                     </span>
                 </div>
             </div>
         </div>
+        <div id='abdomenSaveText' class='editText'></div>
     </div>
 
     <div id="abdomenEditFloat" class="hover-window-style container">
@@ -228,11 +229,23 @@
                 <!--</div>-->
             <!--</div>-->
         </div>
-        <div id='abdomenText' class='editText'></div>
         <div class="row margin-top-3">
             <button id="abdomenEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
             <button id="abdomenUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
         </div>
+        <div class="row">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" class="form-control" placeholder="Search" id="search_abdomen2" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" type="button" onclick="searchAbdomen2();clickedSymptom=$('#search_abdomen2').val();$(document).find('.active').removeClass('active')" >
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id='abdomenText' class='editText'></div>
     </div>
 
 
@@ -277,7 +290,8 @@
 
   <!-- Head -->
 
-  <button id="headOpen" type="button" class="btn btn-default btn-circle" onclick="clickShowDivHead(this)"></button>
+ <!--  <button id="headOpen" type="button" class="btn btn-default btn-circle" onclick="clickShowDiv(this);$('#abdomenFloat').css('display', 'none');$('#heartFloat').css('display', 'none');hideHistoryPopup()"></button> -->
+    
     <div id="headFloat" class="hover-window-style container">
         <div class="row">
             <div class="col-md-4"></div>
@@ -328,13 +342,14 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control" placeholder="Search" id="search_head"/>
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="searchHead()">
-                            <i class="fas fa-search"></i>
+                        <button class="btn btn-info" type="button" onclick="searchHead();clickedSymptom=$('#search_head').val();$(document).find('.active').removeClass('active')">
+                          <i class="fas fa-search"></i>
                         </button>
                     </span>
                 </div>
             </div>
         </div>
+        <div id='headSaveText' class='editText'></div>
     </div>
     <div id="headEditFloat" class="hover-window-style container">
             <div class="row">
@@ -378,17 +393,29 @@
                 </div>
             </div>
             </div>
-            <div id='headText' class='editText'></div>
             <div class="row margin-top-3">
                 <button id="headEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
                 <button id="headUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
-            </div>            
+            </div>
+            <div class="row">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Search" id="search_head2"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button" onclick="searchHead2();clickedSymptom=$('#search_head2').val();$(document).find('.active').removeClass('active')">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>   
+            <div id='headText' class='editText'></div>         
         </div>
 
 
 <!-- Heart -->
 
-  <button id="heartOpen" type="button" class="btn btn-default btn-circle" onclick="clickShowDivHeart(this)"></button>
+ <!--  <button id="heartOpen" type="button" class="btn btn-default btn-circle" onclick="clickShowDiv(this);$('#headFloat').css('display', 'none');$('#abdomenFloat').css('display', 'none');hideHistoryPopup()"></button> -->
     <div id="heartFloat" class="hover-window-style container">
         <div class="row">
             <div class="col-md-4"></div>
@@ -439,13 +466,14 @@
                 <div class="input-group col-md-12">
                     <input type="text" class="form-control" placeholder="Search" id="search_heart"/>
                     <span class="input-group-btn">
-                        <button class="btn btn-info" type="button" onclick="searchHeart()">
+                        <button class="btn btn-info" type="button" onclick="searchHeart();clickedSymptom=$('#search_heart').val();$(document).find('.active').removeClass('active')">
                             <i class="fas fa-search"></i>
                         </button>
                     </span>
                 </div>
             </div>
         </div>
+        <div id='heartSaveText' class='editText'></div>
     </div>
     <div id="heartEditFloat" class="hover-window-style container">
             <div class="row">
@@ -488,11 +516,24 @@
                 </div>
             </div>
             </div>
-            <div id='heartText' class='editText'></div>
+            
             <div class="row">
                 <button id="heartEditBtn" type="button" class="btn btn-primary margin-0-auto">Edit</button>
                 <button id="heartUpdateBtn" type="button" class="btn btn-primary margin-0-auto">Update</button>
             </div>
+            <div class="row">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" class="form-control" placeholder="Search" id="search_heart2"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-info" type="button" onclick="searchHeart2();clickedSymptom=$('#search_heart2').val();$(document).find('.active').removeClass('active')">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id='heartText' class='editText'></div>
         </div>
 
 
