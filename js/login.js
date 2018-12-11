@@ -35,10 +35,10 @@ function login(){
     }
     else{
         var Zack = store.get('Zack');
-        var Windy = store.get('Windy');
+        var Wendy = store.get('Wendy');
         var Admin = store.get('Admin');
 
-        if(username.value == 'Windy' && pass.value == Windy.password){
+        if(username.value == 'Wendy' && pass.value == Wendy.password){
             $('#user').empty();
             $('#user').append(username.value);
             window.location.href="index.html";
