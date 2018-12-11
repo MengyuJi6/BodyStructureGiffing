@@ -1670,18 +1670,21 @@ $(function () {
 	$("#abdomenEditBtn").click(function () {		
 		if (editState==0) editState = 1;
 		$('#abdomenDesc2').prop( "disabled", false );
+		$('#search_abdomen2').prop( "disabled", false );
 		$('#abdomenText').text('');
 	});
 
 	$("#headEditBtn").click(function () {		
 		if (editState==0) editState = 1;
 		$('#headDesc2').prop( "disabled", false );
+		$('#search_head2').prop( "disabled", false );
 		$('#headText').text('');
 	});
 
 	$("#heartEditBtn").click(function () {		
 		if (editState==0) editState = 1;
 		$('#heartDesc2').prop( "disabled", false );
+		$('#search_heart2').prop( "disabled", false );
 		$('#heartText').text('');
 	});
 	
@@ -1708,6 +1711,7 @@ $(function () {
 		$('#abdomenText').text('Update successfully');
 		editState = 0;
 		$('#abdomenDesc2').prop( "disabled", true );
+		$('#search_abdomen2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
         for (i = hist.history.length-1; i >= 0; i--) {
@@ -1747,6 +1751,7 @@ $(function () {
 		$('#headText').text('Update successfully');
 		editState = 0;
 		$('#headDesc2').prop( "disabled", true );
+		$('#search_head2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
         for (i = hist.history.length-1; i >= 0; i--) {
@@ -1786,6 +1791,7 @@ $(function () {
 		$('#heartText').text('Update successfully');
 		editState = 0;
 		$('#heartDesc2').prop( "disabled", true );
+		$('#search_heart2').prop( "disabled", true );
 		var data = [["Date", "Area", "Symptom", "Description"]] //headers
         var hist = store.get('user');
         for (i = hist.history.length-1; i >= 0; i--) {
