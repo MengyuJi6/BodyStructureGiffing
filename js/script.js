@@ -2003,36 +2003,37 @@ function hideDiv(){
     if ($("#headFloat").css("display","block")){
         $("#headFloat").css("display","none");
     }
+    hideHistoryPopup();
 }
 
-$("#body_img").mapster({
-    fillOpacity: 0.3,
-    fillColor: 'ff0000',
-    // render_highlight: {
-    //     fillColor: "2aff00",
-    //     stroke: true
-    // },
-    // render_select:{
-    //     fillColor: "ff000c",
-    //     stroke: false
-    // },
-    fadeInterval: 50,
-    mapKey: "data-key",
-    areas: [
-        {
-            key: "head",
-            selected: true
-        },
-        {
-            key: "heart",
-            selected: true
-        },
-        {
-            key: "abdomen",
-            selected: true
-        }
-    ]
-});
+// $("#body_img").mapster({
+//     fillOpacity: 0.3,
+//     fillColor: 'ff0000',
+//     // render_highlight: {
+//     //     fillColor: "2aff00",
+//     //     stroke: true
+//     // },
+//     // render_select:{
+//     //     fillColor: "ff000c",
+//     //     stroke: false
+//     // },
+//     fadeInterval: 50,
+//     mapKey: "data-key",
+//     areas: [
+//         {
+//             key: "head",
+//             selected: true
+//         },
+//         {
+//             key: "heart",
+//             selected: true
+//         },
+//         {
+//             key: "abdomen",
+//             selected: true
+//         }
+//     ]
+// });
 
 function clickShowDivAbdomen(obj){
     // var position_x = obj.getBoundingClientRect().left+document.body.scrollLeft+135;
