@@ -1235,62 +1235,92 @@ $(document).ready(function () {
 
 	$('#abdomen-normal').click(function() {
 		getNormalAbdomen();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-normal').addClass('active');
 		clickedSymptom = "Normal";
 	});
 	$('#abdomen-hunger').click(function() {
 		getAbdomenHunger();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-hunger').addClass('active');
 		clickedSymptom = "Loss of Appetite";
 	});
 	$('#abdomen-dehydration').click(function() {
 		getAbdomenDehydration();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-dehydration').addClass('active');
 		clickedSymptom = "Dehydration";
 	});
 	$('#abdomen-gas').click(function() {
 		getAbdomenGas();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-gas').addClass('active');
 		clickedSymptom = "Gas";
 	});
 	$('#abdomen-tender').click(function() {
 		getAbdomenTender();
+		$('#abdomenFloat').find(".active").removeClass('active');
+		$('#abdomen-tender').addClass('active');
 		clickedSymptom = "Tender Abdomen";
 	});
 	$('#head-normal').click(function() {
 		getHeadNormal();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-normal').addClass('active');
 		clickedSymptom = "Normal";
 	});
 	$('#head-dizzy').click(function() {
 		getHeadDizziness();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-dizzy').addClass('active');
 		clickedSymptom = "Dizziness";
 	});
 	$('#head-headache').click(function() {
 		getHeadHeadache();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-headache').addClass('active');
 		clickedSymptom = "Headache";
 	});
 	$('#head-vision').click(function() {
 		getHeadVision();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-vision').addClass('active');
 		clickedSymptom = "Changes in Vision";
 	});
 	$('#head-vomit').click(function() {
 		getHeadVomiting();
+		$('#headFloat').find(".active").removeClass('active');
+		$('#head-vomit').addClass('active');
 		clickedSymptom = "Vomiting";
 	});
 	$('#heart-normal').click(function() {
 		getHeartNormal();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-normal').addClass('active');
 		clickedSymptom = "Normal";
 	});
 	$('#heart-palpitation').click(function() {
 		getHeartPalpitations();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-palpitation').addClass('active');
 		clickedSymptom = "Heart Palpitations";
 	});
 	$('#heart-murmur').click(function() {
 		getHeartMurmurs();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-murmur').addClass('active');
 		clickedSymptom = "Murmurs";
 	});
 	$('#heart-chest').click(function() {
 		getHeartChestPain();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-chest').addClass('active');
 		clickedSymptom = "Chest Pain";
 	});
 	$('#heart-tightness').click(function() {
 		getHeartTightness();
+		$('#heartFloat').find(".active").removeClass('active');
+		$('#heart-tightness').addClass('active');
 		clickedSymptom = "Tightness or Pressure";
 	});
 
