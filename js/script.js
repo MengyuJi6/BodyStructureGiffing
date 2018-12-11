@@ -1527,19 +1527,26 @@ $(function () {
     });
 
     $("#deletebtn").click(function () {        
-        var index = $('#historytbl').find(".highlighted").index(); //for history record 
-        if (index != -1) {
-            $('#historytbl').find('.highlighted').remove();
-            //console.log(index);
-			var hist = store.get('user');
-			var l=hist.history.length;
-            hist.history.splice( l-index, 1);
-			store.set('user', hist);
-			$('#historyMessage').text('Delete Successfully');			
-			$('#abdomenEditFloat').css("display", "none");
-			$('#heartEditFloat').css("display", "none");
-			$('#headEditFloat').css("display", "none");
-        }
+        var index = $('#historytbl').find(".highlighted").index(); //for history record        
+       	if (index != -1) {
+       		var retVal = confirm("Are you sure to delete this entry?");
+   			if( retVal == true ) {
+	            $('#historytbl').find('.highlighted').remove();
+	            //console.log(index);
+				var hist = store.get('user');
+				var l=hist.history.length;
+	            hist.history.splice( l-index, 1);
+				store.set('user', hist);
+				$('#historyMessage').text('Delete Successfully');			
+				$('#abdomenEditFloat').css("display", "none");
+				$('#heartEditFloat').css("display", "none");
+				$('#headEditFloat').css("display", "none");
+        	}
+       	}
+       	else {
+       		$('#historyMessage').text('Please select an entry.');
+       	}
+        
     });
 
     $("#abdomenSaveBtn").click(function () {
